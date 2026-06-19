@@ -9,16 +9,17 @@ const secret = new TextEncoder().encode(process.env.AUTH_SECRET ?? "");
 
 export type SessionUser = {
   id: string;
-  email: string;
+  username: string;
   name: string | null;
+  title: string | null;
   role: Role;
 };
 
-/** Подписывает JWT и кладёт его в httpOnly-cookie. Вызывается из server action. */
 export async function createSession(user: SessionUser): Promise<void> {
   const token = await new SignJWT({
-    email: user.email,
+    username: user.username,
     name: user.name,
+    title: user.title,
     role: user.role,
   })
     .setProtectedHeader({ alg: "HS256" })
@@ -37,7 +38,6 @@ export async function createSession(user: SessionUser): Promise<void> {
   });
 }
 
-/** Читает и проверяет сессию из cookie. Возвращает null, если её нет/невалидна. */
 export async function getSession(): Promise<SessionUser | null> {
   const token = (await cookies()).get(COOKIE)?.value;
   if (!token) return null;
@@ -47,8 +47,9 @@ export async function getSession(): Promise<SessionUser | null> {
     if (!payload.sub) return null;
     return {
       id: payload.sub,
-      email: payload.email as string,
+      username: payload.username as string,
       name: (payload.name as string | null) ?? null,
+      title: (payload.title as string | null) ?? null,
       role: payload.role as Role,
     };
   } catch {
@@ -60,23 +61,28 @@ export async function destroySession(): Promise<void> {
   (await cookies()).delete(COOKIE);
 }
 
-/** Гарантирует наличие сессии; иначе редирект на /login. */
 export async function requireAdmin(): Promise<SessionUser> {
   const session = await getSession();
   if (!session) redirect("/login");
   return session;
 }
 
-/** Проверяет email + пароль по базе. */
+/** Проверяет логин + пароль по базе. */
 export async function authenticate(
-  email: string,
+  username: string,
   password: string,
 ): Promise<SessionUser | null> {
-  const user = await prisma.user.findUnique({ where: { email } });
+  const user = await prisma.user.findUnique({ where: { username } });
   if (!user?.passwordHash) return null;
 
   const valid = await verifyPassword(password, user.passwordHash);
   if (!valid) return null;
 
-  return { id: user.id, email: user.email, name: user.name, role: user.role };
+  return {
+    id: user.id,
+    username: user.username,
+    name: user.name,
+    title: user.title,
+    role: user.role,
+  };
 }

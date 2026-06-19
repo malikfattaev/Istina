@@ -2,7 +2,7 @@
 
 import { useActionState, useState } from "react";
 import { Button } from "@istina/ui";
-import { saveArticle, type ArticleFormState } from "./actions";
+import { saveArticle, type ArticleFormState } from "@/lib/article-actions";
 
 type Category = { id: string; name: string };
 
@@ -39,11 +39,13 @@ function slugify(text: string): string {
 }
 
 export function ArticleForm({
-  categories,
   article,
+  categories,
+  lockedCategory,
 }: {
-  categories: Category[];
   article?: ArticleData;
+  categories?: Category[];
+  lockedCategory?: { id: string; name: string };
 }) {
   const [state, action, pending] = useActionState<ArticleFormState, FormData>(
     saveArticle,
@@ -98,27 +100,37 @@ export function ArticleForm({
           />
         </div>
 
-        <div>
-          <label className={label} htmlFor="categoryId">
-            Рубрика
-          </label>
-          <select
-            id="categoryId"
-            name="categoryId"
-            required
-            defaultValue={article?.categoryId ?? ""}
-            className={field}
-          >
-            <option value="" disabled>
-              Выберите рубрику
-            </option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
+        {lockedCategory ? (
+          <div>
+            <input type="hidden" name="categoryId" value={lockedCategory.id} />
+            <span className={label}>Рубрика</span>
+            <p className="rounded-xl border border-sand-200 bg-sand-50 px-4 py-2.5 text-sm text-sand-700">
+              {lockedCategory.name}
+            </p>
+          </div>
+        ) : (
+          <div>
+            <label className={label} htmlFor="categoryId">
+              Рубрика
+            </label>
+            <select
+              id="categoryId"
+              name="categoryId"
+              required
+              defaultValue={article?.categoryId ?? ""}
+              className={field}
+            >
+              <option value="" disabled>
+                Выберите рубрику
               </option>
-            ))}
-          </select>
-        </div>
+              {(categories ?? []).map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <div>
           <label className={label} htmlFor="excerpt">
@@ -135,7 +147,7 @@ export function ArticleForm({
 
         <div>
           <label className={label} htmlFor="content">
-            Текст статьи
+            Текст
           </label>
           <textarea
             id="content"

@@ -10,8 +10,8 @@ const sans = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Истина · Админ-панель",
-    template: "%s · Истина ERP",
+    default: "Истина | ERP",
+    template: "Истина | %s",
   },
   description:
     "Панель управления порталом «Истина»: статьи, рубрики и администраторы.",

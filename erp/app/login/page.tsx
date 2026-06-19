@@ -27,23 +27,23 @@ export default function LoginPage() {
             И
           </span>
           <div>
-            <p className="font-semibold text-sand-900">Истина</p>
-            <p className="text-xs text-sand-500">Админ-панель</p>
+            <p className="font-semibold text-sand-900">Истина ERP</p>
+            <p className="text-xs text-sand-500">Панель управления</p>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-sand-800" htmlFor="email">
-              Email
+            <label className="mb-1.5 block text-sm font-medium text-sand-800" htmlFor="login">
+              Логин
             </label>
             <input
-              id="email"
-              name="email"
-              type="email"
+              id="login"
+              name="login"
+              type="text"
               required
-              autoComplete="email"
-              placeholder="admin@istina.uz"
+              autoComplete="username"
+              placeholder="admin"
               className={field}
             />
           </div>

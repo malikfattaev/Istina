@@ -1,35 +1,50 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Pencil, Plus, Trash2 } from "lucide-react";
 import { ArticleStatus, prisma } from "@istina/db";
-import { deleteArticle } from "./actions";
+import { deleteArticle } from "@/lib/article-actions";
 
 const statusLabel: Record<ArticleStatus, string> = {
   DRAFT: "Черновик",
   PUBLISHED: "Опубликовано",
 };
 
-export default async function ArticlesPage() {
+export default async function CategoryArticlesPage({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category } = await params;
+  const rubric = await prisma.category.findUnique({
+    where: { slug: category },
+  });
+  if (!rubric) {
+    notFound();
+  }
+
   const articles = await prisma.article.findMany({
+    where: { categoryId: rubric.id },
     orderBy: { updatedAt: "desc" },
-    include: { category: { select: { name: true } } },
   });
 
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
         <h1 className="font-serif text-2xl font-semibold text-sand-900">
-          Статьи
+          {rubric.name}
         </h1>
         <Link
-          href="/articles/new"
-          className="inline-flex items-center rounded-xl bg-clay-500 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-clay-600"
+          href={`/r/${rubric.slug}/new`}
+          className="inline-flex items-center gap-1.5 rounded-xl bg-clay-500 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-clay-600"
         >
-          Новая статья
+          <Plus className="h-4 w-4" aria-hidden />
+          Добавить
         </Link>
       </div>
 
       {articles.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-dashed border-sand-300 bg-white/60 p-12 text-center text-sand-600">
-          Пока нет ни одной статьи. Создайте первую.
+          Пока нет материалов в этом разделе.
         </div>
       ) : (
         <div className="mt-6 divide-y divide-sand-200 overflow-hidden rounded-2xl border border-sand-200 bg-white">
@@ -39,15 +54,10 @@ export default async function ArticlesPage() {
               className="flex items-center justify-between gap-4 p-4"
             >
               <div className="min-w-0">
-                <Link
-                  href={`/articles/${article.id}`}
-                  className="font-medium text-sand-900 hover:text-clay-700"
-                >
+                <p className="truncate font-medium text-sand-900">
                   {article.title}
-                </Link>
-                <p className="mt-0.5 text-sm text-sand-500">
-                  {article.category.name}
-                  <span className="mx-1.5">·</span>
+                </p>
+                <p className="mt-0.5 text-sm">
                   <span
                     className={
                       article.status === "PUBLISHED"
@@ -59,20 +69,22 @@ export default async function ArticlesPage() {
                   </span>
                 </p>
               </div>
-              <div className="flex shrink-0 items-center gap-3">
+              <div className="flex shrink-0 items-center gap-2">
                 <Link
                   href={`/articles/${article.id}`}
-                  className="text-sm font-medium text-sand-700 hover:text-clay-700"
+                  aria-label="Редактировать"
+                  className="rounded-lg border border-sand-200 p-2 text-sand-600 transition-colors hover:border-clay-300 hover:text-clay-700"
                 >
-                  Редактировать
+                  <Pencil className="h-4 w-4" aria-hidden />
                 </Link>
                 <form action={deleteArticle}>
                   <input type="hidden" name="id" value={article.id} />
                   <button
                     type="submit"
-                    className="text-sm font-medium text-red-600 hover:text-red-700"
+                    aria-label="Удалить"
+                    className="rounded-lg border border-sand-200 p-2 text-red-600 transition-colors hover:border-red-300 hover:bg-red-50"
                   >
-                    Удалить
+                    <Trash2 className="h-4 w-4" aria-hidden />
                   </button>
                 </form>
               </div>

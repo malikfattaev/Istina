@@ -9,16 +9,16 @@ export async function signInAction(
   _prev: LoginState,
   formData: FormData,
 ): Promise<LoginState> {
-  const email = String(formData.get("email") ?? "").trim();
+  const username = String(formData.get("login") ?? "").trim();
   const password = String(formData.get("password") ?? "");
 
-  if (!email || !password) {
-    return { error: "Введите email и пароль." };
+  if (!username || !password) {
+    return { error: "Введите логин и пароль." };
   }
 
-  const user = await authenticate(email, password);
+  const user = await authenticate(username, password);
   if (!user) {
-    return { error: "Неверный email или пароль." };
+    return { error: "Неверный логин или пароль." };
   }
 
   await createSession(user);

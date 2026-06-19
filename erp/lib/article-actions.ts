@@ -15,7 +15,7 @@ const articleSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Slug: только латиница, цифры и дефис"),
   categoryId: z.string().min(1, "Выберите рубрику"),
   excerpt: z.string().trim().optional(),
-  content: z.string().trim().min(1, "Добавьте текст статьи"),
+  content: z.string().trim().min(1, "Добавьте текст"),
   coverImage: z
     .string()
     .trim()
@@ -39,7 +39,6 @@ export async function saveArticle(
   }
   const input = parsed.data;
 
-  // publishedAt проставляется при первой публикации и далее сохраняется.
   let publishedAt: Date | null = null;
   if (input.status === "PUBLISHED") {
     const existing = input.id
@@ -62,18 +61,24 @@ export async function saveArticle(
     publishedAt,
   };
 
+  let categorySlug = "";
   try {
     if (input.id) {
       await prisma.article.update({ where: { id: input.id }, data });
     } else {
       await prisma.article.create({ data: { ...data, authorId: user.id } });
     }
+    const category = await prisma.category.findUnique({
+      where: { id: input.categoryId },
+      select: { slug: true },
+    });
+    categorySlug = category?.slug ?? "";
   } catch {
     return { error: "Не удалось сохранить - возможно, такой slug уже занят." };
   }
 
-  revalidatePath("/articles");
-  redirect("/articles");
+  revalidatePath("/", "layout");
+  redirect(categorySlug ? `/r/${categorySlug}` : "/");
 }
 
 export async function deleteArticle(formData: FormData): Promise<void> {
@@ -81,6 +86,6 @@ export async function deleteArticle(formData: FormData): Promise<void> {
   const id = String(formData.get("id") ?? "");
   if (id) {
     await prisma.article.delete({ where: { id } });
-    revalidatePath("/articles");
+    revalidatePath("/", "layout");
   }
 }
