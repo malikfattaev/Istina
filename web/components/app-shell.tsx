@@ -124,8 +124,8 @@ export function AppShell({
         <SidebarContent dailyVerse={dailyVerse} />
       </aside>
 
-      {/* Мобильная верхняя панель */}
-      <div className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50/90 px-4 backdrop-blur lg:hidden">
+      {/* Мобильная верхняя панель - не sticky, прокручивается вместе со страницей */}
+      <div className="flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
         <Brand />
         <button
           type="button"
@@ -137,29 +137,41 @@ export function AppShell({
         </button>
       </div>
 
-      {/* Мобильное выезжающее меню */}
-      {open ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div
-            className="absolute inset-0 bg-sand-950/30"
-            onClick={close}
-            aria-hidden
-          />
-          <div className="absolute inset-y-0 left-0 flex w-72 flex-col bg-white shadow-xl">
-            <div className="flex justify-end p-2">
-              <button
-                type="button"
-                onClick={close}
-                aria-label="Закрыть меню"
-                className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
-              >
-                <X className="h-5 w-5" aria-hidden />
-              </button>
-            </div>
-            <SidebarContent dailyVerse={dailyVerse} onNavigate={close} />
+      {/* Мобильное выезжающее меню - плавно выезжает слева */}
+      <div
+        className={cn(
+          "fixed inset-0 z-50 lg:hidden",
+          open ? "pointer-events-auto" : "pointer-events-none",
+        )}
+        aria-hidden={!open}
+      >
+        <div
+          onClick={close}
+          aria-hidden
+          className={cn(
+            "absolute inset-0 bg-sand-950/30 transition-opacity duration-300 ease-out",
+            open ? "opacity-100" : "opacity-0",
+          )}
+        />
+        <div
+          className={cn(
+            "absolute inset-y-0 left-0 flex w-72 flex-col bg-white shadow-xl transition-transform duration-300 ease-out",
+            open ? "translate-x-0" : "-translate-x-full",
+          )}
+        >
+          <div className="flex justify-end p-2">
+            <button
+              type="button"
+              onClick={close}
+              aria-label="Закрыть меню"
+              className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
+            >
+              <X className="h-5 w-5" aria-hidden />
+            </button>
           </div>
+          <SidebarContent dailyVerse={dailyVerse} onNavigate={close} />
         </div>
-      ) : null}
+      </div>
 
       {/* Контент */}
       <div className="lg:pl-72">

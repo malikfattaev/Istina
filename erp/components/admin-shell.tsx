@@ -159,7 +159,7 @@ export function AdminShell({
         <SidebarContent user={user} categories={categories} />
       </aside>
 
-      <div className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50/90 px-4 backdrop-blur lg:hidden">
+      <div className="flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
         <Link href="/" className="flex items-center">
           <span className="font-semibold text-sand-900">Истина ERP</span>
         </Link>
@@ -173,24 +173,40 @@ export function AdminShell({
         </button>
       </div>
 
-      {open ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-sand-950/30" onClick={close} aria-hidden />
-          <div className="absolute inset-y-0 left-0 flex w-72 flex-col bg-white shadow-xl">
-            <div className="flex justify-end p-2">
-              <button
-                type="button"
-                onClick={close}
-                aria-label="Закрыть меню"
-                className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
-              >
-                <X className="h-5 w-5" aria-hidden />
-              </button>
-            </div>
-            <SidebarContent user={user} categories={categories} onNavigate={close} />
+      <div
+        className={cn(
+          "fixed inset-0 z-50 lg:hidden",
+          open ? "pointer-events-auto" : "pointer-events-none",
+        )}
+        aria-hidden={!open}
+      >
+        <div
+          onClick={close}
+          aria-hidden
+          className={cn(
+            "absolute inset-0 bg-sand-950/30 transition-opacity duration-300 ease-out",
+            open ? "opacity-100" : "opacity-0",
+          )}
+        />
+        <div
+          className={cn(
+            "absolute inset-y-0 left-0 flex w-72 flex-col bg-white shadow-xl transition-transform duration-300 ease-out",
+            open ? "translate-x-0" : "-translate-x-full",
+          )}
+        >
+          <div className="flex justify-end p-2">
+            <button
+              type="button"
+              onClick={close}
+              aria-label="Закрыть меню"
+              className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
+            >
+              <X className="h-5 w-5" aria-hidden />
+            </button>
           </div>
+          <SidebarContent user={user} categories={categories} onNavigate={close} />
         </div>
-      ) : null}
+      </div>
 
       <div className="flex min-h-dvh flex-col lg:pl-72">
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
