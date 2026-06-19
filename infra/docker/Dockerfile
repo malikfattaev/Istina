@@ -29,7 +29,7 @@ ARG APP
 ENV NEXT_TELEMETRY_DISABLED=1
 # Сначала только манифесты - слой кешируется, пока не меняется lock-файл.
 COPY --from=pruner /app/out/json/ .
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 # Затем исходники и сборка.
 COPY --from=pruner /app/out/full/ .
 RUN pnpm --filter @istina/db run db:generate
