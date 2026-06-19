@@ -1,0 +1,17 @@
+{
+  "name": "@istina/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "tsconfig",
+    "tailwind"
+  ],
+  "exports": {
+    "./tailwind": "./tailwind/preset.ts",
+    "./tsconfig/*": "./tsconfig/*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

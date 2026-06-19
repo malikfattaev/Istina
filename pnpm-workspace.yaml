@@ -1,0 +1,15 @@
+packages:
+  - "web"
+  - "erp"
+  - "packages/*"
+
+# Доверенным зависимостям стека разрешено выполнять postinstall-скрипты
+# (pnpm блокирует их по умолчанию): Prisma скачивает движки, esbuild и
+# sharp ставят нативные бинарники.
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  esbuild: true
+  prisma: true
+  sharp: true
+  unrs-resolver: true

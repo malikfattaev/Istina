@@ -1,0 +1,8 @@
+{
+  "extends": "@istina/config/tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["src", "prisma"],
+  "exclude": ["node_modules"]
+}

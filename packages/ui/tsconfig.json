@@ -1,0 +1,5 @@
+{
+  "extends": "@istina/config/tsconfig/react-library.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
