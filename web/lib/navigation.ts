@@ -53,12 +53,12 @@ export const rubrics: NavLink[] = [
   rubricBySlug("novosti"),
   rubricBySlug("sobytiya"),
   rubricBySlug("stati"),
+  rubricBySlug("hramy"),
 ];
 
 /** Полезные разделы. */
 export const usefulLinks: NavLink[] = [
   rubricBySlug("pomoshch"),
-  rubricBySlug("hramy"),
   {
     label: "Праздники",
     href: "/prazdniki",
