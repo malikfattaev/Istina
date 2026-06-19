@@ -1,5 +1,6 @@
 import {
   Calendar,
+  Church,
   FileText,
   HeartHandshake,
   Newspaper,
@@ -41,6 +42,12 @@ export const articleRubrics: Rubric[] = [
     title: "Помощь",
     description: "Статьи о тех, кому нужна помощь.",
     icon: HeartHandshake,
+  },
+  {
+    slug: "hramy",
+    title: "Храмы",
+    description: "Православные храмы Ташкента: список и краткая история.",
+    icon: Church,
   },
 ];
 

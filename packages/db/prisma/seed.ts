@@ -31,6 +31,12 @@ const categories = [
     description: "Статьи о людях, которым нужна помощь и поддержка.",
     position: 4,
   },
+  {
+    slug: "hramy",
+    name: "Храмы",
+    description: "Православные храмы Ташкента: список и краткая история.",
+    position: 5,
+  },
 ] as const;
 
 async function main() {

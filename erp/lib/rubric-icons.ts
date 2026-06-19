@@ -1,5 +1,6 @@
 import {
   Calendar,
+  Church,
   FileText,
   FolderOpen,
   HeartHandshake,
@@ -12,6 +13,7 @@ const icons: Record<string, LucideIcon> = {
   stati: FileText,
   sobytiya: Calendar,
   pomoshch: HeartHandshake,
+  hramy: Church,
 };
 
 export function rubricIcon(slug: string): LucideIcon {

@@ -57,6 +57,22 @@ const fallback: DailyVerse = {
   text: "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий верующий в Него, не погиб, но имел жизнь вечную.",
 };
 
+const TIME_ZONE = "Asia/Tashkent";
+
+/**
+ * Порядковый номер дня (от эпохи) в часовом поясе Ташкента. По нему выбирается
+ * стих, поэтому он меняется в местную полночь - согласованно с памятью дня.
+ */
+function tashkentDayNumber(): number {
+  const iso = new Intl.DateTimeFormat("en-CA", {
+    timeZone: TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  return Math.floor(Date.parse(`${iso}T00:00:00Z`) / 86_400_000);
+}
+
 function formatReference(ref: VerseRef): string {
   const abbr = gospelAbbr[ref.book] ?? "";
   return `${abbr} ${ref.chapter}:${ref.verse}`.trim();
@@ -71,7 +87,7 @@ type GetBibleResponse = {
  * Ответ кешируется на сутки; при ошибке возвращается запасной стих.
  */
 export async function getDailyVerse(): Promise<DailyVerse> {
-  const dayIndex = Math.floor(Date.now() / 86_400_000) % verses.length;
+  const dayIndex = tashkentDayNumber() % verses.length;
   const ref = verses[dayIndex] ?? verses[0]!;
   const reference = formatReference(ref);
 
