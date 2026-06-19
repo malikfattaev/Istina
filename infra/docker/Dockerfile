@@ -26,13 +26,11 @@ RUN turbo prune "${APP}" --docker
 # ── Установка зависимостей и сборка ──────────────────────────────────────────
 FROM base AS builder
 ARG APP
-ARG RAILWAY_SERVICE_ID
 ENV NEXT_TELEMETRY_DISABLED=1
-# Сначала только манифесты - слой кешируется, пока не меняется lock-файл.
+# Сначала только манифесты: слой установки зависимостей кешируется Railway
+# (BuildKit layer cache), пока не меняется lock-файл - повторные сборки быстрые.
 COPY --from=pruner /app/out/json/ .
-# Кэш pnpm-store между сборками (id в требуемом Railway формате s/<service-id>-...).
-RUN --mount=type=cache,id=s/${RAILWAY_SERVICE_ID}-pnpm,target=/pnpm/store \
-  pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 # Затем исходники и сборка.
 COPY --from=pruner /app/out/full/ .
 RUN pnpm --filter @istina/db run db:generate
