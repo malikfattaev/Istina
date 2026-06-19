@@ -34,7 +34,7 @@ const categories = [
   {
     slug: "hramy",
     name: "Храмы",
-    description: "Православные храмы Ташкента: список и краткая история.",
+    description: "Православные храмы Ташкента и их история.",
     position: 5,
   },
 ] as const;

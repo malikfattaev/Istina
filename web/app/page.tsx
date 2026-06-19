@@ -33,7 +33,7 @@ function Section({ title, items }: { title: string; items: NavLink[] }) {
   return (
     <section>
       <h2 className="text-lg font-semibold text-sand-900">{title}</h2>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid auto-rows-fr gap-4 sm:grid-cols-2">
         {items.map((item) => (
           <QuickLink key={item.href} item={item} />
         ))}
