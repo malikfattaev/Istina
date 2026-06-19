@@ -34,6 +34,11 @@ RUN pnpm install --frozen-lockfile
 COPY --from=pruner /app/out/full/ .
 RUN pnpm --filter @istina/db run db:generate
 RUN pnpm --filter "${APP}" run build
+# Query engine Prisma не попадает в standalone-трейс автоматически -
+# кладём его рядом с приложением, где Prisma его ищет (/app/<app>/.prisma/client).
+RUN ENGINE="$(find node_modules -name 'libquery_engine-linux-musl-openssl-3.0.x.so.node' | head -1)" \
+  && mkdir -p "${APP}/.next/standalone/${APP}/.prisma/client" \
+  && cp "$ENGINE" "${APP}/.next/standalone/${APP}/.prisma/client/"
 
 # ── Рантайм ──────────────────────────────────────────────────────────────────
 FROM base AS runner
