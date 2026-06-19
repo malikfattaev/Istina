@@ -2,6 +2,10 @@ import { prisma } from "@istina/db";
 import { requireAdmin } from "@/lib/auth";
 import { AdminShell } from "@/components/admin-shell";
 
+// Все страницы админки рендерятся по запросу (используют сессию и БД),
+// поэтому не пытаемся пререндерить их на этапе сборки.
+export const dynamic = "force-dynamic";
+
 export default async function AdminLayout({
   children,
 }: {

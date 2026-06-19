@@ -81,14 +81,8 @@ function SidebarContent({
       <Link
         href="/"
         onClick={onNavigate}
-        className="flex items-center gap-2.5 px-2 py-1"
+        className="flex items-center px-2 py-1"
       >
-        <span
-          aria-hidden
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-clay-500 font-serif text-lg text-white"
-        >
-          И
-        </span>
         <span className="text-lg font-semibold tracking-tight text-sand-900">
           Истина ERP
         </span>
@@ -166,13 +160,7 @@ export function AdminShell({
       </aside>
 
       <div className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50/90 px-4 backdrop-blur lg:hidden">
-        <Link href="/" className="flex items-center gap-2">
-          <span
-            aria-hidden
-            className="flex h-8 w-8 items-center justify-center rounded-lg bg-clay-500 font-serif text-white"
-          >
-            И
-          </span>
+        <Link href="/" className="flex items-center">
           <span className="font-semibold text-sand-900">Истина ERP</span>
         </Link>
         <button

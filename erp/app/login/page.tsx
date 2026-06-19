@@ -19,17 +19,9 @@ export default function LoginPage() {
         action={action}
         className="w-full max-w-sm rounded-2xl border border-sand-200 bg-white p-8"
       >
-        <div className="mb-6 flex items-center gap-2.5">
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-clay-500 font-serif text-lg text-white"
-          >
-            И
-          </span>
-          <div>
-            <p className="font-semibold text-sand-900">Истина ERP</p>
-            <p className="text-xs text-sand-500">Панель управления</p>
-          </div>
+        <div className="mb-6">
+          <p className="text-lg font-semibold text-sand-900">Истина ERP</p>
+          <p className="text-xs text-sand-500">Панель управления</p>
         </div>
 
         <div className="flex flex-col gap-4">

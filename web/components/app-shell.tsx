@@ -13,14 +13,8 @@ function Brand({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       href="/"
       onClick={onNavigate}
-      className="flex items-center gap-2.5 px-2 py-1"
+      className="flex items-center px-2 py-1"
     >
-      <span
-        aria-hidden
-        className="flex h-9 w-9 items-center justify-center rounded-xl bg-clay-500 font-serif text-lg text-white"
-      >
-        И
-      </span>
       <span className="text-lg font-semibold tracking-tight text-sand-900">
         Истина
       </span>
