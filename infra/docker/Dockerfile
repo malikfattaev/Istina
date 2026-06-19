@@ -19,7 +19,7 @@ WORKDIR /app
 # ── Прунинг монорепо до целевого приложения и его зависимостей ───────────────
 FROM base AS pruner
 ARG APP
-RUN pnpm add -g turbo@^2
+RUN npm install -g turbo@^2
 COPY . .
 RUN turbo prune "${APP}" --docker
 
