@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@istina/ui";
-import { submitMessage } from "@/lib/message-actions";
 
 type Category = "prayer" | "help" | "donate" | "question" | "other";
 
@@ -37,29 +36,47 @@ export function ContactForm() {
     event.preventDefault();
     setPending(true);
     setError(null);
+    setSubmitted(false);
 
-    const result = await submitMessage({
-      category,
-      name,
-      contact,
-      prayerType: isPrayer ? prayerType : null,
-      baptized: isPrayer ? baptized === "yes" : null,
-      names: isPrayer ? names : null,
-      body: message.trim() || null,
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category,
+          name,
+          contact,
+          prayerType: isPrayer ? prayerType : null,
+          baptized: isPrayer ? baptized === "yes" : null,
+          names: isPrayer ? names : null,
+          body: message.trim() || null,
+        }),
+      });
 
-    setPending(false);
+      const result = (await response.json().catch(() => null)) as
+        | { ok?: true; error?: string }
+        | null;
 
-    if ("error" in result) {
-      setError(result.error);
-      return;
+      if (!response.ok || !result?.ok) {
+        setError(
+          result?.error ??
+            "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz.",
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      setName("");
+      setContact("");
+      setNames("");
+      setMessage("");
+    } catch {
+      setError(
+        "Не удалось отправить. Проверьте подключение к интернету и попробуйте снова.",
+      );
+    } finally {
+      setPending(false);
     }
-
-    setSubmitted(true);
-    setName("");
-    setContact("");
-    setNames("");
-    setMessage("");
   }
 
   return (

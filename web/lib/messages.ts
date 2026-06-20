@@ -1,5 +1,3 @@
-"use server";
-
 import { MessageCategory, prisma } from "@istina/db";
 
 export type MessageInput = {
@@ -22,9 +20,11 @@ const categories: Record<string, MessageCategory> = {
   other: MessageCategory.OTHER,
 };
 
-/** Сохраняет обращение с публичной формы в БД - редакция увидит его в ERP («Письма»). */
-export async function submitMessage(input: MessageInput): Promise<SubmitResult> {
-  const category = categories[input.category];
+/** Валидирует и сохраняет обращение с формы «Контакты». Редакция видит его в ERP («Письма»). */
+export async function createMessage(
+  input: Partial<MessageInput>,
+): Promise<SubmitResult> {
+  const category = categories[input.category ?? ""];
   const name = input.name?.trim() ?? "";
   const contact = input.contact?.trim() ?? "";
 
@@ -36,12 +36,8 @@ export async function submitMessage(input: MessageInput): Promise<SubmitResult> 
   const names = input.names?.trim() || null;
   const body = input.body?.trim() || null;
 
-  if (isPrayer && !names) {
-    return { error: "Укажите имена для поминовения." };
-  }
-  if (!isPrayer && !body) {
-    return { error: "Напишите сообщение." };
-  }
+  if (isPrayer && !names) return { error: "Укажите имена для поминовения." };
+  if (!isPrayer && !body) return { error: "Напишите сообщение." };
 
   try {
     await prisma.message.create({
@@ -49,15 +45,17 @@ export async function submitMessage(input: MessageInput): Promise<SubmitResult> 
         category,
         name,
         contact,
-        prayerType: isPrayer ? input.prayerType : null,
-        baptized: isPrayer ? input.baptized : null,
+        prayerType: isPrayer ? input.prayerType ?? null : null,
+        baptized: isPrayer ? input.baptized ?? null : null,
         names: isPrayer ? names : null,
         body,
       },
     });
   } catch (e) {
-    console.error("[submitMessage] create failed:", e);
-    return { error: "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz." };
+    console.error("[createMessage] failed:", e);
+    return {
+      error: "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz.",
+    };
   }
 
   return { ok: true };
