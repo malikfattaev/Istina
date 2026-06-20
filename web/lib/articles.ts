@@ -10,6 +10,7 @@ export type ArticleSummary = {
 
 export type ArticleDetail = {
   title: string;
+  excerpt: string | null;
   content: string;
   coverImage: string | null;
   date: string;
@@ -58,6 +59,7 @@ export async function getArticle(
     where: { slug, status: "PUBLISHED", category: { slug: categorySlug } },
     select: {
       title: true,
+      excerpt: true,
       content: true,
       coverImage: true,
       publishedAt: true,
@@ -69,6 +71,7 @@ export async function getArticle(
 
   return {
     title: article.title,
+    excerpt: article.excerpt,
     content: article.content,
     coverImage: article.coverImage,
     date: formatDate(article.publishedAt ?? article.createdAt),

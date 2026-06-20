@@ -14,7 +14,7 @@ const articleSchema = z.object({
     .trim()
     .regex(/^[a-z0-9-]+$/, "Slug: только латиница, цифры и дефис"),
   categoryId: z.string().min(1, "Выберите рубрику"),
-  excerpt: z.string().trim().optional(),
+  excerpt: z.string().trim().min(1, "Добавьте краткое описание"),
   content: z.string().trim().min(1, "Добавьте текст"),
   coverImage: z
     .string()
@@ -56,7 +56,7 @@ export async function saveArticle(
     title: input.title,
     slug: input.slug,
     categoryId: input.categoryId,
-    excerpt: input.excerpt || null,
+    excerpt: input.excerpt,
     content: input.content,
     coverImage: input.coverImage || null,
     status: input.status as ArticleStatus,

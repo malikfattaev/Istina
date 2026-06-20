@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 import { Button } from "@istina/ui";
 import { rubrics, usefulLinks, type NavLink } from "@/lib/navigation";
+import { HoverArrow } from "@/components/hover-arrow";
 
 function QuickLink({ item }: { item: NavLink }) {
   const Icon: LucideIcon = item.icon;
@@ -16,10 +17,7 @@ function QuickLink({ item }: { item: NavLink }) {
       <div className="min-w-0">
         <h3 className="flex items-center gap-1 font-semibold text-sand-900">
           {item.label}
-          <ArrowRight
-            className="h-4 w-4 -translate-x-1 text-clay-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
-            aria-hidden
-          />
+          <HoverArrow className="text-clay-500" />
         </h3>
         <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-sand-600">
           {item.description}

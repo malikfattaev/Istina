@@ -139,14 +139,15 @@ export function ArticleForm({
 
         <div>
           <label className={label} htmlFor="excerpt">
-            Краткое описание (по желанию)
+            Краткое описание
           </label>
           <input
             id="excerpt"
             name="excerpt"
+            required
             defaultValue={article?.excerpt ?? ""}
             className={field}
-            placeholder="Одно-два предложения для списка"
+            placeholder="Одно-два предложения - покажется на баннере и в списке"
           />
         </div>
 
