@@ -13,6 +13,17 @@ const nextConfig = {
   transpilePackages: ["@istina/ui", "@istina/db"],
   reactStrictMode: true,
   poweredByHeader: false,
+  // Раздел «Евангелие» переименован в «Библия» - старые ссылки ведём на новый путь.
+  async redirects() {
+    return [
+      { source: "/evangelie", destination: "/bibliya", permanent: true },
+      {
+        source: "/evangelie/:book/:chapter",
+        destination: "/bibliya/:book/:chapter",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -41,10 +41,10 @@ export const primaryNav: NavLink[] = [
     description: "Быстрые ссылки и последние публикации",
   },
   {
-    label: "Евангелие",
-    href: "/evangelie",
+    label: "Библия",
+    href: "/bibliya",
     icon: BookOpen,
-    description: "Четвероевангелие в Синодальном переводе",
+    description: "Ветхий и Новый Завет в Синодальном переводе",
   },
 ];
 
