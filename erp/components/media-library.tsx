@@ -117,7 +117,7 @@ export function MediaLibrary({
           Медиа
         </h1>
         <p className="mt-1 text-sand-600">
-          Картинки и файлы сайта. Перетащи файл сюда, вставь из буфера
+          Картинки, видео и файлы сайта. Перетащи файл сюда, вставь из буфера
           (Cmd/Ctrl+V) или нажми кнопку.
         </p>
       </div>
@@ -125,7 +125,7 @@ export function MediaLibrary({
       <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatCard label="Всего" value={String(stats.total)} />
         <StatCard label="Картинки" value={String(stats.images)} />
-        <StatCard label="Документы" value={String(stats.documents)} />
+        <StatCard label="Видео и др." value={String(stats.documents)} />
         <StatCard label="Объём" value={formatBytes(stats.bytes)} />
       </div>
 
@@ -147,7 +147,7 @@ export function MediaLibrary({
             Перетащи файлы сюда, вставь из буфера или нажми кнопку
           </p>
           <p className="mt-1 text-sm text-sand-500">
-            Картинки до 10 МБ (PNG, JPG, WebP, GIF, AVIF, SVG)
+            Картинки до 10 МБ и видео до 50 МБ. Картинки сохраняются в WebP.
           </p>
         </div>
         <button
@@ -167,7 +167,7 @@ export function MediaLibrary({
         <input
           ref={inputRef}
           type="file"
-          accept="image/*"
+          accept="image/*,video/*"
           multiple
           className="hidden"
           onChange={(e) => {
@@ -223,13 +223,24 @@ export function MediaLibrary({
               className="group overflow-hidden rounded-2xl border border-sand-200 bg-white"
             >
               <div className="relative aspect-[4/3] bg-sand-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.path}
-                  alt={item.filename}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                {item.contentType.startsWith("video/") ? (
+                  <video
+                    src={`${item.path}#t=0.1`}
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full bg-sand-900 object-contain"
+                  />
+                ) : (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={item.path}
+                    alt={item.filename}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <button
                   type="button"
                   onClick={() => handleDelete(item)}

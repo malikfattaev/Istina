@@ -66,19 +66,25 @@ export type StoredObject = {
   body: ReadableStream;
   contentType: string;
   contentLength?: number;
+  contentRange?: string; // выставляется при частичном (Range) ответе
 };
 
-export async function getObject(key: string): Promise<StoredObject | null> {
+/** Отдаёт объект из бакета. `range` (HTTP Range) включает частичную отдачу - нужно для видео. */
+export async function getObject(
+  key: string,
+  range?: string,
+): Promise<StoredObject | null> {
   if (!isStorageConfigured()) return null;
   try {
     const res = await s3().send(
-      new GetObjectCommand({ Bucket: bucket, Key: key }),
+      new GetObjectCommand({ Bucket: bucket, Key: key, Range: range }),
     );
     if (!res.Body) return null;
     return {
       body: res.Body.transformToWebStream(),
       contentType: res.ContentType ?? "application/octet-stream",
       contentLength: res.ContentLength,
+      contentRange: res.ContentRange,
     };
   } catch {
     return null;

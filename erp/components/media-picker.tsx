@@ -41,6 +41,9 @@ export function MediaPicker({
     }
   }
 
+  // Обложка - только изображение, поэтому видео в выборе не показываем.
+  const imageItems = items.filter((i) => i.contentType.startsWith("image/"));
+
   return (
     <div>
       {value ? (
@@ -66,7 +69,7 @@ export function MediaPicker({
               Загрузка...
             </>
           ) : (
-            "Загрузить с компа"
+            "Загрузить"
           )}
         </label>
         <button type="button" onClick={() => setOpen(true)} className={btn}>
@@ -107,13 +110,13 @@ export function MediaPicker({
               </button>
             </div>
             <div className="overflow-y-auto p-4">
-              {items.length === 0 ? (
+              {imageItems.length === 0 ? (
                 <p className="py-8 text-center text-sand-500">
-                  В медиатеке пока пусто. Загрузите файл кнопкой выше.
+                  В медиатеке пока нет картинок. Загрузите файл кнопкой выше.
                 </p>
               ) : (
                 <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
-                  {items.map((item) => (
+                  {imageItems.map((item) => (
                     <li key={item.id}>
                       <button
                         type="button"

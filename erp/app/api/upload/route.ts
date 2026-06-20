@@ -11,7 +11,8 @@ import {
 
 export const runtime = "nodejs";
 
-const MAX_BYTES = 10 * 1024 * 1024; // 10 МБ
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024; // 10 МБ
+const MAX_VIDEO_BYTES = 50 * 1024 * 1024; // 50 МБ
 const IMAGE_TYPES = [
   "image/jpeg",
   "image/png",
@@ -19,6 +20,12 @@ const IMAGE_TYPES = [
   "image/gif",
   "image/avif",
   "image/svg+xml",
+];
+const VIDEO_TYPES = [
+  "video/mp4",
+  "video/webm",
+  "video/ogg",
+  "video/quicktime",
 ];
 
 export async function POST(request: Request) {
@@ -38,21 +45,27 @@ export async function POST(request: Request) {
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "Файл не передан" }, { status: 400 });
   }
-  if (!IMAGE_TYPES.includes(file.type)) {
+  const isImage = IMAGE_TYPES.includes(file.type);
+  const isVideo = VIDEO_TYPES.includes(file.type);
+  if (!isImage && !isVideo) {
     return NextResponse.json(
-      { error: "Только изображения (JPEG, PNG, WebP, GIF, AVIF, SVG)" },
+      { error: "Только изображения или видео (MP4, WebM, MOV)" },
       { status: 400 },
     );
   }
-  if (file.size > MAX_BYTES) {
-    return NextResponse.json({ error: "Файл больше 10 МБ" }, { status: 400 });
+  const maxBytes = isVideo ? MAX_VIDEO_BYTES : MAX_IMAGE_BYTES;
+  if (file.size > maxBytes) {
+    return NextResponse.json(
+      { error: `Файл больше ${Math.round(maxBytes / 1024 / 1024)} МБ` },
+      { status: 400 },
+    );
   }
 
   const bytes = new Uint8Array(await file.arrayBuffer());
 
   let width: number | null = null;
   let height: number | null = null;
-  if (file.type !== "image/svg+xml") {
+  if (isImage && file.type !== "image/svg+xml") {
     try {
       const dim = imageSize(bytes);
       width = dim.width ?? null;

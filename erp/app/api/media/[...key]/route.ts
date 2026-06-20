@@ -5,7 +5,7 @@ export const runtime = "nodejs";
 
 /** Прокси к приватному бакету: отдаёт файл по ключу (для превью в админке). */
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ key: string[] }> },
 ) {
   const { key } = await params;
@@ -14,18 +14,22 @@ export async function GET(
     return new NextResponse("Not found", { status: 404 });
   }
 
-  const obj = await getObject(objectKey);
+  const range = request.headers.get("range") ?? undefined;
+  const obj = await getObject(objectKey, range);
   if (!obj) {
     return new NextResponse("Not found", { status: 404 });
   }
 
+  const headers: Record<string, string> = {
+    "Content-Type": obj.contentType,
+    "Cache-Control": "public, max-age=31536000, immutable",
+    "Accept-Ranges": "bytes",
+  };
+  if (obj.contentLength) headers["Content-Length"] = String(obj.contentLength);
+  if (obj.contentRange) headers["Content-Range"] = obj.contentRange;
+
   return new NextResponse(obj.body, {
-    headers: {
-      "Content-Type": obj.contentType,
-      "Cache-Control": "public, max-age=31536000, immutable",
-      ...(obj.contentLength
-        ? { "Content-Length": String(obj.contentLength) }
-        : {}),
-    },
+    status: obj.contentRange ? 206 : 200,
+    headers,
   });
 }
