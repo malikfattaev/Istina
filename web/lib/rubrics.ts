@@ -46,7 +46,7 @@ export const articleRubrics: Rubric[] = [
   {
     slug: "hramy",
     title: "Храмы",
-    description: "Православные храмы Ташкента и их история.",
+    description: "Храмы, при которых действуют молодёжные православные форумы.",
     icon: Church,
   },
 ];
