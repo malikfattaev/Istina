@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import {
+  Images,
   LayoutDashboard,
   LogOut,
   Menu,
@@ -77,7 +78,7 @@ function SidebarContent({
   onNavigate?: () => void;
 }) {
   return (
-    <div className="flex h-full flex-col gap-6 p-4">
+    <div className="flex min-h-full flex-col gap-6 p-4">
       <Link
         href="/"
         onClick={onNavigate}
@@ -88,7 +89,7 @@ function SidebarContent({
         </span>
       </Link>
 
-      <nav className="flex flex-1 flex-col gap-6 overflow-y-auto">
+      <nav className="flex flex-col gap-6">
         <NavGroup title="Основное">
           <SidebarLink
             href="/"
@@ -112,6 +113,12 @@ function SidebarContent({
 
         <NavGroup title="Управление">
           <SidebarLink
+            href="/media"
+            icon={Images}
+            label="Медиа"
+            onNavigate={onNavigate}
+          />
+          <SidebarLink
             href="/employees"
             icon={Users}
             label="Сотрудники"
@@ -120,7 +127,7 @@ function SidebarContent({
         </NavGroup>
       </nav>
 
-      <div className="border-t border-sand-200 pt-3">
+      <div className="mt-auto border-t border-sand-200 pt-3">
         <p className="truncate px-3 text-sm font-medium text-sand-800">
           {user.name ?? user.username}
         </p>
@@ -155,7 +162,7 @@ export function AdminShell({
 
   return (
     <div className="min-h-dvh">
-      <aside className="hidden border-r border-sand-200 bg-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-72 lg:flex-col">
+      <aside className="hidden border-r border-sand-200 bg-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-72 lg:flex-col lg:overflow-y-auto">
         <SidebarContent user={user} categories={categories} />
       </aside>
 
@@ -194,7 +201,7 @@ export function AdminShell({
             open ? "translate-x-0" : "-translate-x-full",
           )}
         >
-          <div className="flex justify-end p-2">
+          <div className="flex shrink-0 justify-end p-2">
             <button
               type="button"
               onClick={close}
@@ -204,7 +211,9 @@ export function AdminShell({
               <X className="h-5 w-5" aria-hidden />
             </button>
           </div>
-          <SidebarContent user={user} categories={categories} onNavigate={close} />
+          <div className="min-h-0 flex-1 overflow-y-auto">
+            <SidebarContent user={user} categories={categories} onNavigate={close} />
+          </div>
         </div>
       </div>
 

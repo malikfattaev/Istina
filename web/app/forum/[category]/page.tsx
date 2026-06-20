@@ -48,17 +48,27 @@ export default async function RubricPage({ params }: PageProps) {
             <li key={article.slug}>
               <Link
                 href={`/forum/${rubric.slug}/${article.slug}`}
-                className="block rounded-2xl border border-sand-200 bg-white p-5 transition-all hover:border-clay-300 hover:shadow-sm"
+                className="flex flex-col overflow-hidden rounded-2xl border border-sand-200 bg-white transition-all hover:border-clay-300 hover:shadow-sm sm:flex-row"
               >
-                <p className="text-xs text-sand-500">{article.date}</p>
-                <h2 className="mt-1 text-lg font-semibold text-sand-900">
-                  {article.title}
-                </h2>
-                {article.excerpt ? (
-                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-sand-600">
-                    {article.excerpt}
-                  </p>
+                {article.coverImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={article.coverImage}
+                    alt={article.title}
+                    className="h-44 w-full shrink-0 object-cover sm:h-auto sm:w-56"
+                  />
                 ) : null}
+                <div className="min-w-0 p-5">
+                  <p className="text-xs text-sand-500">{article.date}</p>
+                  <h2 className="mt-1 text-lg font-semibold text-sand-900">
+                    {article.title}
+                  </h2>
+                  {article.excerpt ? (
+                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-sand-600">
+                      {article.excerpt}
+                    </p>
+                  ) : null}
+                </div>
               </Link>
             </li>
           ))}

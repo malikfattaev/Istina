@@ -137,3 +137,20 @@ model Tag {
   name     String
   articles Article[] @relation("ArticleTags")
 }
+
+// Медиатека: загруженные через ERP файлы (хранятся в S3-бакете, в БД - метаданные).
+model Media {
+  id           String   @id @default(cuid())
+  key          String   @unique // ключ объекта в бакете
+  filename     String // исходное имя файла
+  contentType  String
+  size         Int // байты
+  width        Int?
+  height       Int?
+  folder       String   @default("/")
+  alt          String?
+  uploadedById String?
+  createdAt    DateTime @default(now())
+
+  @@index([createdAt])
+}

@@ -3,6 +3,8 @@
 import { useActionState, useState } from "react";
 import { Button } from "@istina/ui";
 import { saveArticle, type ArticleFormState } from "@/lib/article-actions";
+import { MediaPicker } from "./media-picker";
+import type { MediaItem } from "@/lib/media";
 
 type Category = { id: string; name: string };
 
@@ -42,10 +44,12 @@ export function ArticleForm({
   article,
   categories,
   lockedCategory,
+  mediaItems,
 }: {
   article?: ArticleData;
   categories?: Category[];
   lockedCategory?: { id: string; name: string };
+  mediaItems?: MediaItem[];
 }) {
   const [state, action, pending] = useActionState<ArticleFormState, FormData>(
     saveArticle,
@@ -54,6 +58,7 @@ export function ArticleForm({
   const [title, setTitle] = useState(article?.title ?? "");
   const [slug, setSlug] = useState(article?.slug ?? "");
   const [slugLocked, setSlugLocked] = useState(Boolean(article));
+  const [cover, setCover] = useState(article?.coverImage ?? "");
 
   return (
     <form
@@ -161,16 +166,12 @@ export function ArticleForm({
         </div>
 
         <div>
-          <label className={label} htmlFor="coverImage">
-            Обложка - ссылка на изображение (по желанию)
-          </label>
-          <input
-            id="coverImage"
-            name="coverImage"
-            type="url"
-            defaultValue={article?.coverImage ?? ""}
-            className={field}
-            placeholder="https://..."
+          <span className={label}>Обложка (по желанию)</span>
+          <input type="hidden" name="coverImage" value={cover} />
+          <MediaPicker
+            value={cover}
+            onChange={setCover}
+            mediaItems={mediaItems ?? []}
           />
         </div>
 

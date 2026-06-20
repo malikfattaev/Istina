@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
   title: "О проекте",
@@ -10,10 +9,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <PageHeader
-        title="О проекте"
-        description="«Истина» - православный портал Узбекистана."
-      />
+      {/* Баннер-герой с фото православного собора */}
+      <section className="relative mb-8 flex min-h-[260px] flex-col justify-end overflow-hidden rounded-3xl border border-sand-200 sm:min-h-[340px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/street.jpg"
+          alt="Православный собор в Ташкенте"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/40 to-sand-950/10" />
+        <div className="relative p-6 sm:p-10">
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl">
+            О проекте
+          </h1>
+          <p className="mt-2 max-w-2xl leading-relaxed text-white/85">
+            «Истина» - православный портал Узбекистана.
+          </p>
+        </div>
+      </section>
 
       <div className="max-w-2xl space-y-4 leading-relaxed text-sand-700">
         <p>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@istina/db";
 import { ArticleForm } from "@/components/article-form";
+import { listMedia } from "@/lib/media";
 
 export default async function NewArticleInCategory({
   params,
@@ -18,6 +19,8 @@ export default async function NewArticleInCategory({
     notFound();
   }
 
+  const mediaItems = await listMedia();
+
   return (
     <div>
       <Link
@@ -31,7 +34,10 @@ export default async function NewArticleInCategory({
         Новая запись · {rubric.name}
       </h1>
       <div className="mt-6">
-        <ArticleForm lockedCategory={{ id: rubric.id, name: rubric.name }} />
+        <ArticleForm
+          lockedCategory={{ id: rubric.id, name: rubric.name }}
+          mediaItems={mediaItems}
+        />
       </div>
     </div>
   );

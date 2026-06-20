@@ -5,6 +5,7 @@ export type ArticleSummary = {
   title: string;
   excerpt: string;
   date: string;
+  coverImage: string | null;
 };
 
 export type ArticleDetail = {
@@ -33,6 +34,7 @@ export async function getPublishedArticles(
       slug: true,
       title: true,
       excerpt: true,
+      coverImage: true,
       publishedAt: true,
       createdAt: true,
     },
@@ -43,6 +45,7 @@ export async function getPublishedArticles(
     title: article.title,
     excerpt: article.excerpt ?? "",
     date: formatDate(article.publishedAt ?? article.createdAt),
+    coverImage: article.coverImage,
   }));
 }
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@istina/db";
 import { ArticleForm } from "@/components/article-form";
+import { listMedia } from "@/lib/media";
 
 export default async function EditArticlePage({
   params,
@@ -11,7 +12,7 @@ export default async function EditArticlePage({
 }) {
   const { id } = await params;
 
-  const [article, categories] = await Promise.all([
+  const [article, categories, mediaItems] = await Promise.all([
     prisma.article.findUnique({
       where: { id },
       include: { category: { select: { slug: true, name: true } } },
@@ -20,6 +21,7 @@ export default async function EditArticlePage({
       orderBy: { position: "asc" },
       select: { id: true, name: true },
     }),
+    listMedia(),
   ]);
 
   if (!article) {
@@ -40,6 +42,7 @@ export default async function EditArticlePage({
       </h1>
       <div className="mt-6">
         <ArticleForm
+          mediaItems={mediaItems}
           categories={categories}
           article={{
             id: article.id,

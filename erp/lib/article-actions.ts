@@ -19,9 +19,11 @@ const articleSchema = z.object({
   coverImage: z
     .string()
     .trim()
-    .url("Некорректный URL обложки")
-    .optional()
-    .or(z.literal("")),
+    .refine(
+      (v) => v === "" || v.startsWith("/api/media/") || /^https?:\/\//.test(v),
+      "Некорректная обложка",
+    )
+    .optional(),
   status: z.enum(["DRAFT", "PUBLISHED"]),
 });
 
