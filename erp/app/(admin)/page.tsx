@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Users, type LucideIcon } from "lucide-react";
+import { Images, Mail, Users, type LucideIcon } from "lucide-react";
 import { prisma } from "@istina/db";
 import { rubricIcon } from "@/lib/rubric-icons";
 
@@ -58,7 +58,9 @@ export default async function DashboardPage() {
   return (
     <div>
       <h1 className="font-serif text-2xl font-semibold text-sand-900">Обзор</h1>
-      <p className="mt-1 text-sand-600">Панель управления порталом «Истина».</p>
+      <p className="mt-1 text-sand-600">
+        Панель управления форумом «Истина».
+      </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
@@ -96,9 +98,15 @@ export default async function DashboardPage() {
           }
         />
         <QuickLink
+          href="/media"
+          icon={Images}
+          title="Медиа"
+          subtitle="Картинки и видео сайта"
+        />
+        <QuickLink
           href="/employees"
           icon={Users}
-          title="Сотрудники"
+          title="Команда"
           subtitle={`${employees} в команде`}
         />
       </div>
