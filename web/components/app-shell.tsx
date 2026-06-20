@@ -10,16 +10,9 @@ import type { DailyVerse } from "@/lib/daily-verse";
 
 function Brand({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <Link
-      href="/"
-      onClick={onNavigate}
-      className="flex flex-col px-2 py-1 leading-tight"
-    >
-      <span className="text-[11px] font-semibold uppercase tracking-wide text-clay-600">
-        Молодёжный православный форум
-      </span>
-      <span className="font-serif text-xl font-semibold tracking-tight text-sand-900">
-        «Истина»
+    <Link href="/" onClick={onNavigate} className="block px-2 py-1">
+      <span className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-sand-900">
+        Молодёжный православный форум «Истина»
       </span>
     </Link>
   );

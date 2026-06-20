@@ -28,7 +28,7 @@ export default async function EmployeesPage() {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="font-serif text-2xl font-semibold text-sand-900">
-            Сотрудники
+            Команда
           </h1>
           <p className="mt-1 text-sand-600">Учётные записи и доступ к ERP.</p>
         </div>

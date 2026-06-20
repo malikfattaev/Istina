@@ -70,7 +70,8 @@ export default function ContactsPage() {
       <section>
         <h2 className="text-lg font-semibold text-sand-900">Написать нам</h2>
         <p className="mt-1 text-sm text-sand-600">
-          Заполните форму - вопрос, просьба о молитве или желание помочь.
+          Заполните форму - присоединиться к команде, попросить или предложить
+          помощь.
         </p>
         <div className="mt-4">
           <ContactForm />

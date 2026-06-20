@@ -138,7 +138,7 @@ function SidebarContent({
           <SidebarLink
             href="/employees"
             icon={Users}
-            label="Сотрудники"
+            label="Команда"
             onNavigate={onNavigate}
           />
         </NavGroup>

@@ -4,20 +4,23 @@ import { requireAdmin } from "@/lib/auth";
 import { deleteMessage, setMessageStatus } from "@/lib/message-actions";
 
 const categoryLabel: Record<MessageCategory, string> = {
-  PRAYER: "Просьба помолиться",
-  HELP: "Просьба о помощи",
+  JOIN: "Хочу присоединиться",
+  HELP: "Нужна помощь",
   DONATE: "Хочу помочь",
-  QUESTION: "Вопрос священнику",
   OTHER: "Другое",
+  // legacy
+  PRAYER: "Просьба помолиться",
+  QUESTION: "Вопрос священнику",
 };
 
-// Отдельный акцент для тех, кто хочет помочь - такие письма важно не пропустить.
+// Цветовой акцент по теме - чтобы важные письма было видно сразу.
 const categoryBadge: Record<MessageCategory, string> = {
-  PRAYER: "bg-sand-100 text-sand-700",
+  JOIN: "bg-clay-100 text-clay-800",
   HELP: "bg-amber-100 text-amber-800",
   DONATE: "bg-emerald-100 text-emerald-800",
-  QUESTION: "bg-sky-100 text-sky-800",
   OTHER: "bg-sand-100 text-sand-700",
+  PRAYER: "bg-sand-100 text-sand-700",
+  QUESTION: "bg-sky-100 text-sky-800",
 };
 
 function formatDateTime(date: Date): string {

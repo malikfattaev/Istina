@@ -22,7 +22,7 @@ export default async function EditEmployeePage({
         className="inline-flex items-center gap-1.5 text-sm font-medium text-clay-600 hover:text-clay-700"
       >
         <ArrowLeft className="h-4 w-4" aria-hidden />
-        Сотрудники
+        Команда
       </Link>
       <h1 className="mt-3 font-serif text-2xl font-semibold text-sand-900">
         Редактирование сотрудника

@@ -91,27 +91,22 @@ function TestamentSection({
 
 export default function BibliaPage() {
   return (
-    <div className="flex flex-col gap-10">
+    <div>
       <PageHeader
         title="Библия"
         description="Священное Писание в Синодальном переводе. Выберите книгу для чтения."
+        className="mb-4"
       />
 
-      <TestamentSection
-        testament="ot"
-        title="Ветхий Завет"
-        groups={otGroups}
-      />
-      <TestamentSection
-        testament="nt"
-        title="Новый Завет"
-        groups={ntGroups}
-      />
+      <div className="flex flex-col gap-10">
+        <TestamentSection testament="ot" title="Ветхий Завет" groups={otGroups} />
+        <TestamentSection testament="nt" title="Новый Завет" groups={ntGroups} />
 
-      <p className="text-xs leading-relaxed text-sand-500">
-        * Неканонические книги - входят в состав православной Библии, но не
-        включены в число канонических.
-      </p>
+        <p className="text-xs leading-relaxed text-sand-500">
+          * Неканонические книги - входят в состав православной Библии, но не
+          включены в число канонических.
+        </p>
+      </div>
     </div>
   );
 }

@@ -60,10 +60,10 @@ export const rubrics: NavLink[] = [
 export const usefulLinks: NavLink[] = [
   rubricBySlug("pomoshch"),
   {
-    label: "Праздники",
+    label: "Календарь",
     href: "/prazdniki",
     icon: CalendarDays,
-    description: "Православный календарь праздников",
+    description: "Православный календарь: праздники и память дня",
   },
   {
     label: "Контакты",

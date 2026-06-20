@@ -6,7 +6,7 @@ import { EmptyState } from "@/components/empty-state";
 import { getDailyCommemoration } from "@/lib/saints";
 
 export const metadata: Metadata = {
-  title: "Праздники",
+  title: "Календарь",
   description: "Память святых на каждый день и великие праздники церковного года.",
 };
 
@@ -38,7 +38,7 @@ export default async function PrazdnikiPage() {
   return (
     <div>
       <PageHeader
-        title="Праздники"
+        title="Календарь"
         description="Память святых на каждый день и великие праздники церковного года."
         className="mb-4"
       />

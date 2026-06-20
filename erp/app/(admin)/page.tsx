@@ -52,7 +52,7 @@ export default async function DashboardPage() {
     { label: "Материалы всего", value: total },
     { label: "Опубликовано", value: published },
     { label: "Новые письма", value: newMessages },
-    { label: "Сотрудники", value: employees },
+    { label: "Команда", value: employees },
   ];
 
   return (

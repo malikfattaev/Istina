@@ -3,34 +3,47 @@
 import { useState } from "react";
 import { Button } from "@istina/ui";
 
-type Category = "prayer" | "help" | "donate" | "question" | "other";
+type Category = "join" | "help" | "donate" | "other";
 
 const categories: { value: Category; label: string }[] = [
-  { value: "prayer", label: "Просьба помолиться" },
-  { value: "help", label: "Просьба о помощи" },
+  { value: "join", label: "Хочу присоединиться к команде" },
+  { value: "help", label: "Нужна помощь" },
   { value: "donate", label: "Хочу помочь" },
-  { value: "question", label: "Вопрос священнику" },
   { value: "other", label: "Другое" },
 ];
+
+const messageLabel: Record<Category, string> = {
+  join: "Расскажите о себе",
+  help: "Опишите, какая нужна помощь",
+  donate: "Чем хотите помочь",
+  other: "Сообщение",
+};
+
+const messagePlaceholder: Record<Category, string> = {
+  join: "Немного о себе: возраст, чем хотели бы заниматься в команде",
+  help: "Расскажите, что случилось и чем мы можем помочь",
+  donate: "Например: хочу сделать пожертвование или помочь как волонтёр",
+  other: "Опишите ваш вопрос или просьбу",
+};
+
+const hint: Partial<Record<Category, string>> = {
+  join: "Рады новым ребятам! Напишите немного о себе - и мы свяжемся с вами, расскажем о ближайших встречах и делах команды.",
+  donate:
+    "Спасибо за желание помочь! Напишите, чем хотели бы поддержать - пожертвование, волонтёрство или помощь делом. Мы свяжемся с вами и расскажем, как это сделать.",
+};
 
 const fieldClassName =
   "w-full rounded-xl border border-sand-300 bg-white px-4 py-2.5 text-sm text-sand-900 placeholder:text-sand-400 focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-500/30";
 const labelClassName = "block text-sm font-medium text-sand-800";
 
 export function ContactForm() {
-  const [category, setCategory] = useState<Category>("prayer");
+  const [category, setCategory] = useState<Category>("join");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [prayerType, setPrayerType] = useState<"health" | "repose">("health");
-  const [baptized, setBaptized] = useState<"yes" | "no">("yes");
-  const [names, setNames] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const isPrayer = category === "prayer";
-  const isDonate = category === "donate";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,9 +59,6 @@ export function ContactForm() {
           category,
           name,
           contact,
-          prayerType: isPrayer ? prayerType : null,
-          baptized: isPrayer ? baptized === "yes" : null,
-          names: isPrayer ? names : null,
           body: message.trim() || null,
         }),
       });
@@ -68,7 +78,6 @@ export function ContactForm() {
       setSubmitted(true);
       setName("");
       setContact("");
-      setNames("");
       setMessage("");
     } catch {
       setError(
@@ -136,119 +145,25 @@ export function ContactForm() {
           />
         </div>
 
-        {/* Поля для просьбы о молитве */}
-        {isPrayer ? (
-          <>
-            <fieldset>
-              <legend className={labelClassName}>О ком молитва</legend>
-              <div className="mt-2 flex flex-wrap gap-4">
-                <label className="flex items-center gap-2 text-sm text-sand-800">
-                  <input
-                    type="radio"
-                    name="prayerType"
-                    value="health"
-                    checked={prayerType === "health"}
-                    onChange={() => setPrayerType("health")}
-                    className="accent-clay-600"
-                  />
-                  О здравии
-                </label>
-                <label className="flex items-center gap-2 text-sm text-sand-800">
-                  <input
-                    type="radio"
-                    name="prayerType"
-                    value="repose"
-                    checked={prayerType === "repose"}
-                    onChange={() => setPrayerType("repose")}
-                    className="accent-clay-600"
-                  />
-                  О упокоении
-                </label>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend className={labelClassName}>
-                Крещён(а) в Православной Церкви
-              </legend>
-              <div className="mt-2 flex flex-wrap gap-4">
-                <label className="flex items-center gap-2 text-sm text-sand-800">
-                  <input
-                    type="radio"
-                    name="baptized"
-                    value="yes"
-                    checked={baptized === "yes"}
-                    onChange={() => setBaptized("yes")}
-                    className="accent-clay-600"
-                  />
-                  Да
-                </label>
-                <label className="flex items-center gap-2 text-sm text-sand-800">
-                  <input
-                    type="radio"
-                    name="baptized"
-                    value="no"
-                    checked={baptized === "no"}
-                    onChange={() => setBaptized("no")}
-                    className="accent-clay-600"
-                  />
-                  Нет
-                </label>
-              </div>
-            </fieldset>
-
-            <div>
-              <label className={labelClassName} htmlFor="names">
-                Имена для поминовения
-              </label>
-              <textarea
-                id="names"
-                required
-                rows={2}
-                value={names}
-                onChange={(event) => setNames(event.target.value)}
-                placeholder="Иоанна, Марии, Сергия"
-                className={`${fieldClassName} mt-1.5`}
-              />
-              <p className="mt-1 text-xs leading-relaxed text-sand-600">
-                Имена крещёных православных христиан в родительном падеже,
-                например: «о здравии Иоанна, Марии».
-              </p>
-            </div>
-          </>
-        ) : null}
-
-        {/* Подсказка для тех, кто хочет помочь */}
-        {isDonate ? (
+        {/* Подсказка по теме */}
+        {hint[category] ? (
           <p className="rounded-xl border border-clay-200 bg-clay-50 px-4 py-3 text-sm leading-relaxed text-sand-700">
-            Спасибо за желание помочь! Напишите, чем хотели бы поддержать -
-            пожертвование, волонтёрство или помощь делом. Мы свяжемся с вами и
-            расскажем, как это сделать.
+            {hint[category]}
           </p>
         ) : null}
 
         {/* Сообщение */}
         <div>
           <label className={labelClassName} htmlFor="message">
-            {isPrayer
-              ? "Дополнительно (по желанию)"
-              : isDonate
-                ? "Чем хотите помочь"
-                : "Сообщение"}
+            {messageLabel[category]}
           </label>
           <textarea
             id="message"
             rows={4}
-            required={!isPrayer}
+            required
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            placeholder={
-              isPrayer
-                ? "Если есть что добавить"
-                : isDonate
-                  ? "Например: хочу сделать пожертвование или помочь как волонтёр"
-                  : "Опишите вашу просьбу или вопрос"
-            }
+            placeholder={messagePlaceholder[category]}
             className={`${fieldClassName} mt-1.5`}
           />
         </div>
