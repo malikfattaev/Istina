@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { gospels } from "@/lib/gospel";
+import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
   title: "Евангелие",
@@ -28,7 +29,10 @@ export default function EvangeliePage() {
               <BookOpen className="h-5 w-5" aria-hidden />
             </span>
             <div className="min-w-0">
-              <h2 className="font-semibold text-sand-900">{gospel.title}</h2>
+              <h2 className="flex items-center gap-1 font-semibold text-sand-900">
+                {gospel.title}
+                <HoverArrow className="text-clay-500" />
+              </h2>
               <p className="text-sm text-sand-600">{gospel.chapters} глав</p>
             </div>
           </Link>

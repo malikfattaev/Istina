@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, Phone, type LucideIcon } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { ContactForm } from "@/components/contact-form";
+import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
   title: "Контакты",
@@ -35,14 +36,17 @@ function ContactCard({ contact }: { contact: Contact }) {
   return (
     <a
       href={contact.href}
-      className="flex items-start gap-4 rounded-2xl border border-sand-200 bg-white p-5 transition-colors hover:border-clay-300"
+      className="group flex items-start gap-4 rounded-2xl border border-sand-200 bg-white p-5 transition-all hover:border-clay-300 hover:shadow-sm"
     >
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-clay-600">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-clay-600 transition-colors group-hover:bg-clay-100">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
       <div className="min-w-0">
         <p className="text-sm text-sand-600">{contact.label}</p>
-        <p className="mt-0.5 font-medium text-sand-900">{contact.value}</p>
+        <p className="mt-0.5 flex items-center gap-1 font-medium text-sand-900">
+          {contact.value}
+          <HoverArrow className="text-clay-500" />
+        </p>
       </div>
     </a>
   );
