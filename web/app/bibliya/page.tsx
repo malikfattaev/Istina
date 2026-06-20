@@ -26,15 +26,6 @@ function BookCard({ book }: { book: BibleBook }) {
       <div className="min-w-0">
         <p className="flex items-center gap-1 font-medium text-sand-900">
           <span className="truncate">{book.title}</span>
-          {book.apocryphal ? (
-            <span
-              className="text-clay-400"
-              title="Неканоническая книга"
-              aria-label="неканоническая книга"
-            >
-              *
-            </span>
-          ) : null}
           <HoverArrow className="shrink-0 text-clay-500" />
         </p>
         <p className="text-xs text-sand-500">{book.chapters} глав</p>
@@ -101,11 +92,6 @@ export default function BibliaPage() {
       <div className="flex flex-col gap-10">
         <TestamentSection testament="ot" title="Ветхий Завет" groups={otGroups} />
         <TestamentSection testament="nt" title="Новый Завет" groups={ntGroups} />
-
-        <p className="text-xs leading-relaxed text-sand-500">
-          * Неканонические книги - входят в состав православной Библии, но не
-          включены в число канонических.
-        </p>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 // АВТОГЕНЕРАЦИЯ из getbible.net (Синодальный перевод, версия synodal).
-// Полная Библия: Ветхий и Новый Завет, включая неканонические книги.
+// Канонические книги: Ветхий и Новый Завет (66 книг).
 // Номера книг и число глав взяты из источника. Перевод неизменен -> кеш надолго.
 
 export type Testament = "ot" | "nt";
@@ -12,7 +12,6 @@ export type BibleBook = {
   chapters: number;
   testament: Testament;
   group: string;
-  apocryphal?: boolean; // неканоническая книга
 };
 
 export const bibleBooks: BibleBook[] = [
@@ -30,28 +29,17 @@ export const bibleBooks: BibleBook[] = [
   { slug: "4-tsarstv", number: 12, title: "4-я книга Царств", short: "4 Цар.", chapters: 25, testament: "ot", group: "istor" },
   { slug: "1-paralipomenon", number: 13, title: "1-я Паралипоменон", short: "1 Пар.", chapters: 29, testament: "ot", group: "istor" },
   { slug: "2-paralipomenon", number: 14, title: "2-я Паралипоменон", short: "2 Пар.", chapters: 36, testament: "ot", group: "istor" },
-  { slug: "molitva-manassii", number: 79, title: "Молитва Манассии", short: "Мол. Ман.", chapters: 1, testament: "ot", group: "istor", apocryphal: true },
   { slug: "1-ezdry", number: 15, title: "1-я книга Ездры", short: "1 Езд.", chapters: 10, testament: "ot", group: "istor" },
   { slug: "neemii", number: 16, title: "Книга Неемии", short: "Неем.", chapters: 13, testament: "ot", group: "istor" },
-  { slug: "2-ezdry", number: 67, title: "2-я книга Ездры", short: "2 Езд.", chapters: 9, testament: "ot", group: "istor", apocryphal: true },
-  { slug: "3-ezdry", number: 68, title: "3-я книга Ездры", short: "3 Езд.", chapters: 16, testament: "ot", group: "istor", apocryphal: true },
-  { slug: "tovit", number: 69, title: "Книга Товита", short: "Тов.", chapters: 14, testament: "ot", group: "istor", apocryphal: true },
-  { slug: "iudif", number: 70, title: "Книга Иудифи", short: "Иудиф.", chapters: 16, testament: "ot", group: "istor", apocryphal: true },
   { slug: "esfir", number: 17, title: "Книга Есфири", short: "Есф.", chapters: 10, testament: "ot", group: "istor" },
-  { slug: "1-makkaveev", number: 80, title: "1-я Маккавейская", short: "1 Мак.", chapters: 16, testament: "ot", group: "istor", apocryphal: true },
-  { slug: "2-makkaveev", number: 81, title: "2-я Маккавейская", short: "2 Мак.", chapters: 15, testament: "ot", group: "istor", apocryphal: true },
-  { slug: "3-makkaveev", number: 82, title: "3-я Маккавейская", short: "3 Мак.", chapters: 7, testament: "ot", group: "istor", apocryphal: true },
   { slug: "iova", number: 18, title: "Книга Иова", short: "Иов", chapters: 42, testament: "ot", group: "uchit" },
   { slug: "psaltir", number: 19, title: "Псалтирь", short: "Пс.", chapters: 151, testament: "ot", group: "uchit" },
   { slug: "pritchi", number: 20, title: "Притчи Соломона", short: "Притч.", chapters: 31, testament: "ot", group: "uchit" },
   { slug: "ekklesiast", number: 21, title: "Екклесиаст", short: "Еккл.", chapters: 12, testament: "ot", group: "uchit" },
   { slug: "pesn-pesnei", number: 22, title: "Песнь Песней", short: "Песн.", chapters: 8, testament: "ot", group: "uchit" },
-  { slug: "premudrost-solomona", number: 73, title: "Премудрость Соломона", short: "Прем.", chapters: 19, testament: "ot", group: "uchit", apocryphal: true },
-  { slug: "sirah", number: 74, title: "Премудрость Иисуса, сына Сирахова", short: "Сир.", chapters: 51, testament: "ot", group: "uchit", apocryphal: true },
   { slug: "isaiya", number: 23, title: "Книга пророка Исаии", short: "Ис.", chapters: 66, testament: "ot", group: "prorok" },
   { slug: "ieremiya", number: 24, title: "Книга пророка Иеремии", short: "Иер.", chapters: 52, testament: "ot", group: "prorok" },
   { slug: "plach-ieremii", number: 25, title: "Плач Иеремии", short: "Плач", chapters: 6, testament: "ot", group: "prorok" },
-  { slug: "varuh", number: 75, title: "Книга пророка Варуха", short: "Вар.", chapters: 5, testament: "ot", group: "prorok", apocryphal: true },
   { slug: "iezekiil", number: 26, title: "Книга пророка Иезекииля", short: "Иез.", chapters: 48, testament: "ot", group: "prorok" },
   { slug: "daniil", number: 27, title: "Книга пророка Даниила", short: "Дан.", chapters: 14, testament: "ot", group: "prorok" },
   { slug: "osiya", number: 28, title: "Осия", short: "Ос.", chapters: 14, testament: "ot", group: "prorok" },
