@@ -28,7 +28,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="max-w-2xl space-y-4 leading-relaxed text-sand-700">
+      <div className="space-y-4 leading-relaxed text-sand-700">
         <p>
           «Истина» собирает в одном удобном месте новости приходов, духовные
           статьи, жития святых и сведения о том, как получить или оказать
