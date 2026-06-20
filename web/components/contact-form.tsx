@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@istina/ui";
 
 type Category = "join" | "help" | "donate" | "other";
@@ -99,18 +100,24 @@ export function ContactForm() {
           <label className={labelClassName} htmlFor="category">
             Тема обращения
           </label>
-          <select
-            id="category"
-            className={`${fieldClassName} mt-1.5`}
-            value={category}
-            onChange={(event) => setCategory(event.target.value as Category)}
-          >
-            {categories.map((item) => (
-              <option key={item.value} value={item.value}>
-                {item.label}
-              </option>
-            ))}
-          </select>
+          <div className="relative mt-1.5">
+            <select
+              id="category"
+              className="w-full appearance-none rounded-xl border border-sand-300 bg-white py-2.5 pl-4 pr-10 text-sm text-sand-900 focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-500/30"
+              value={category}
+              onChange={(event) => setCategory(event.target.value as Category)}
+            >
+              {categories.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-sand-400"
+              aria-hidden
+            />
+          </div>
         </div>
 
         {/* Имя */}
