@@ -82,7 +82,7 @@ export function RichEditor({
     immediatelyRender: false,
     editorProps: {
       attributes: {
-        class: "article-body min-h-[280px] px-4 py-3 focus:outline-none",
+        class: "article-body min-h-[220px] px-4 py-3 focus:outline-none sm:min-h-[280px]",
       },
     },
     onUpdate: ({ editor }) => setHtml(editor.isEmpty ? "" : editor.getHTML()),

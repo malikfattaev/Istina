@@ -50,7 +50,7 @@ export default async function MessagesPage() {
     <div>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="font-serif text-2xl font-semibold text-sand-900">
+          <h1 className="font-serif text-xl font-semibold text-sand-900 sm:text-2xl">
             Письма
           </h1>
           <p className="mt-1 text-sand-600">
@@ -65,7 +65,7 @@ export default async function MessagesPage() {
       </div>
 
       {messages.length === 0 ? (
-        <div className="mt-6 flex flex-col items-center justify-center rounded-2xl border border-dashed border-sand-300 bg-white px-6 py-16 text-center">
+        <div className="mt-6 flex flex-col items-center justify-center rounded-2xl border border-dashed border-sand-300 bg-white px-4 py-10 text-center sm:px-6 sm:py-16">
           <Mail className="h-8 w-8 text-sand-400" aria-hidden />
           <p className="mt-3 font-medium text-sand-800">Писем пока нет</p>
           <p className="mt-1 text-sm text-sand-600">

@@ -64,7 +64,7 @@ export function ArticleForm({
   return (
     <form
       action={action}
-      className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8"
+      className="rounded-2xl border border-sand-200 bg-white p-4 sm:p-6 lg:p-8"
     >
       {article ? <input type="hidden" name="id" value={article.id} /> : null}
 

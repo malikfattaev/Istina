@@ -98,7 +98,7 @@ export default async function ChapterPage({ params }: PageProps) {
       ) : null}
 
       {/* Текст главы */}
-      <div className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8">
+      <div className="rounded-2xl border border-sand-200 bg-white p-5 sm:p-8">
         {verses && verses.length > 0 ? (
           <div className="space-y-3 leading-relaxed text-sand-800">
             {verses.map((verse) => (

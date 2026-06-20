@@ -53,7 +53,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
         <div className="relative p-6 sm:p-10 lg:p-12">
-          <h1 className="font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
+          <h1 className="font-serif text-2xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
             Молодёжный православный форум «Истина»
           </h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/85">

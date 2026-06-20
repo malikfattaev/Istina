@@ -8,11 +8,26 @@ import { cn } from "@istina/ui";
 import { primaryNav, rubrics, usefulLinks, type NavLink } from "@/lib/navigation";
 import type { DailyVerse } from "@/lib/daily-verse";
 
-function Brand({ onNavigate }: { onNavigate?: () => void }) {
+function Brand({
+  onNavigate,
+  compact,
+}: {
+  onNavigate?: () => void;
+  compact?: boolean;
+}) {
   return (
-    <Link href="/" onClick={onNavigate} className="block px-2 py-1">
-      <span className="font-serif text-[15px] font-semibold leading-snug tracking-tight text-sand-900">
-        Молодёжный православный форум «Истина»
+    <Link
+      href="/"
+      onClick={onNavigate}
+      className="block min-w-0 px-2 py-1"
+    >
+      <span
+        className={cn(
+          "block font-serif font-semibold leading-snug tracking-tight text-sand-900",
+          compact ? "truncate text-lg" : "text-[15px]",
+        )}
+      >
+        {compact ? "«Истина»" : "Молодёжный православный форум «Истина»"}
       </span>
     </Link>
   );
@@ -121,13 +136,13 @@ export function AppShell({
       </aside>
 
       {/* Мобильная верхняя панель - не sticky, прокручивается вместе со страницей */}
-      <div className="flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
-        <Brand />
+      <div className="flex h-14 items-center justify-between gap-2 border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
+        <Brand compact />
         <button
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Открыть меню"
-          className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
+          className="shrink-0 rounded-lg p-2.5 text-sand-700 transition-colors hover:bg-sand-100"
         >
           <Menu className="h-5 w-5" aria-hidden />
         </button>
@@ -151,7 +166,7 @@ export function AppShell({
         />
         <div
           className={cn(
-            "absolute inset-y-0 left-0 flex w-72 flex-col bg-white shadow-xl transition-transform duration-300 ease-out",
+            "absolute inset-y-0 left-0 flex w-[85%] max-w-xs flex-col bg-white shadow-xl transition-transform duration-300 ease-out",
             open ? "translate-x-0" : "-translate-x-full",
           )}
         >
@@ -160,7 +175,7 @@ export function AppShell({
               type="button"
               onClick={close}
               aria-label="Закрыть меню"
-              className="rounded-lg p-2 text-sand-700 transition-colors hover:bg-sand-100"
+              className="rounded-lg p-2.5 text-sand-700 transition-colors hover:bg-sand-100"
             >
               <X className="h-5 w-5" aria-hidden />
             </button>

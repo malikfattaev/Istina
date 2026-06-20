@@ -57,7 +57,7 @@ function Dialog({ onClose }: { onClose: () => void }) {
         onClick={onClose}
         aria-hidden
       />
-      <div className="relative w-full max-w-lg rounded-2xl border border-sand-200 bg-white p-6 shadow-xl sm:p-8">
+      <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-sand-200 bg-white p-5 shadow-xl sm:p-6 lg:p-8">
         <div className="flex items-center justify-between">
           <h2 className="font-serif text-xl font-semibold text-sand-900">
             Новый сотрудник

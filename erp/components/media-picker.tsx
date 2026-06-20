@@ -112,7 +112,7 @@ export function MediaPicker({
                   В медиатеке пока пусто. Загрузите файл кнопкой выше.
                 </p>
               ) : (
-                <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+                <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
                   {items.map((item) => (
                     <li key={item.id}>
                       <button

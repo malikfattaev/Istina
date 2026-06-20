@@ -17,7 +17,7 @@ export default function LoginPage() {
     <div className="flex min-h-dvh items-center justify-center bg-sand-100/60 p-4">
       <form
         action={action}
-        className="w-full max-w-sm rounded-2xl border border-sand-200 bg-white p-8"
+        className="w-full max-w-sm rounded-2xl border border-sand-200 bg-white p-6 sm:p-8"
       >
         <div className="mb-6">
           <p className="text-lg font-semibold text-sand-900">Истина ERP</p>

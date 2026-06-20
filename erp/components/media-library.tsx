@@ -137,7 +137,7 @@ export function MediaLibrary({
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={cn(
-          "mt-4 flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed p-8 text-center transition-colors",
+          "mt-4 flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed p-5 text-center transition-colors sm:p-8",
           dragOver ? "border-clay-400 bg-clay-50" : "border-sand-300 bg-white",
         )}
       >

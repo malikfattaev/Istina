@@ -46,7 +46,7 @@ export const articleRubrics: Rubric[] = [
   {
     slug: "hramy",
     title: "Храмы",
-    description: "Храмы, при которых действуют молодёжные православные форумы.",
+    description: "Храмы с молодёжными форумами.",
     icon: Church,
   },
 ];

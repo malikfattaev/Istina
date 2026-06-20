@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
       {/* Баннер-герой одного размера с главной страницей (на всю ширину контента). */}
       {article.coverImage ? (
-        <header className="relative mt-4 flex min-h-[340px] flex-col justify-end overflow-hidden rounded-3xl border border-sand-200 sm:min-h-[440px]">
+        <header className="relative mt-4 flex min-h-[260px] flex-col justify-end overflow-hidden rounded-3xl border border-sand-200 sm:min-h-[440px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={article.coverImage}
@@ -61,9 +61,9 @@ export default async function ArticlePage({ params }: PageProps) {
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
-          <div className="relative p-6 sm:p-10 lg:p-12">
+          <div className="relative p-5 sm:p-10 lg:p-12">
             <p className="text-sm font-medium text-white/80">{article.date}</p>
-            <h1 className="mt-1.5 font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
+            <h1 className="mt-1.5 font-serif text-2xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
               {article.title}
             </h1>
             {article.excerpt ? (
@@ -74,9 +74,9 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
         </header>
       ) : (
-        <header className="mt-4 rounded-3xl border border-sand-200 bg-gradient-to-br from-sand-100 to-sand-50 p-6 sm:p-10 lg:p-12">
+        <header className="mt-4 rounded-3xl border border-sand-200 bg-gradient-to-br from-sand-100 to-sand-50 p-5 sm:p-10 lg:p-12">
           <p className="text-sm font-medium text-clay-600">{article.date}</p>
-          <h1 className="mt-1.5 font-serif text-3xl font-semibold tracking-tight text-sand-900 sm:text-4xl lg:text-5xl">
+          <h1 className="mt-1.5 font-serif text-2xl font-semibold tracking-tight text-sand-900 sm:text-4xl lg:text-5xl">
             {article.title}
           </h1>
           {article.excerpt ? (

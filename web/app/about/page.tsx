@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   HeartHandshake,
   LifeBuoy,
@@ -107,17 +106,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <p className="mt-10 leading-relaxed text-sand-700">
-        Форум открыт для каждого, кто хочет участвовать. Если хочешь
-        присоединиться к нам или помочь общему делу - напиши на странице{" "}
-        <Link
-          href="/contacts"
-          className="font-medium text-clay-600 underline-offset-2 hover:underline"
-        >
-          «Контакты»
-        </Link>
-        .
-      </p>
     </div>
   );
 }

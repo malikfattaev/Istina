@@ -30,7 +30,7 @@ export function EmployeeForm({ employee }: { employee?: EmployeeData }) {
   return (
     <form
       action={formAction}
-      className="max-w-lg rounded-2xl border border-sand-200 bg-white p-6 sm:p-8"
+      className="max-w-lg rounded-2xl border border-sand-200 bg-white p-4 sm:p-6 lg:p-8"
     >
       {employee ? <input type="hidden" name="id" value={employee.id} /> : null}
 
