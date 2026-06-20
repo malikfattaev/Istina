@@ -19,15 +19,15 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://istina.uz"),
   title: {
-    default: "Истина | Главная",
-    template: "Истина | %s",
+    default: "Молодёжный православный форум «Истина»",
+    template: "%s | Истина",
   },
   description:
-    "Православный портал Узбекистана: новости приходов, богословие, жития святых, расписание богослужений.",
+    "Молодёжный православный форум «Истина» при Свято-Успенском кафедральном соборе в Ташкенте: новости, события, выезды, благотворительность и добрые дела.",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    siteName: "Истина",
+    siteName: "Молодёжный православный форум «Истина»",
   },
 };
 

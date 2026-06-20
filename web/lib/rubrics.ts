@@ -22,7 +22,7 @@ export const articleRubrics: Rubric[] = [
   {
     slug: "novosti",
     title: "Новости",
-    description: "Жизнь приходов и события епархии.",
+    description: "Жизнь форума и новости собора.",
     icon: Newspaper,
   },
   {

@@ -13,10 +13,13 @@ function Brand({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       href="/"
       onClick={onNavigate}
-      className="flex items-center px-2 py-1"
+      className="flex flex-col px-2 py-1 leading-tight"
     >
-      <span className="text-lg font-semibold tracking-tight text-sand-900">
-        Истина
+      <span className="text-[11px] font-semibold uppercase tracking-wide text-clay-600">
+        Молодёжный православный форум
+      </span>
+      <span className="font-serif text-xl font-semibold tracking-tight text-sand-900">
+        «Истина»
       </span>
     </Link>
   );

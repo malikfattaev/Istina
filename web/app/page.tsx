@@ -53,25 +53,29 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
         <div className="relative p-6 sm:p-10 lg:p-12">
-          <h1 className="font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
-            Добро пожаловать на «Истину»
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/80 drop-shadow-sm">
+            Молодёжный православный форум
+          </p>
+          <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl">
+            «Истина»
           </h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/85">
-            Православный портал Узбекистана. Здесь собраны новости приходов,
-            богословие, жития святых и расписание богослужений. Выберите раздел,
-            чтобы начать чтение.
+            Команда молодых христиан при Свято-Успенском кафедральном соборе в
+            Ташкенте. Помогаем храму, ездим на выезды, занимаемся
+            благотворительностью и добрыми делами - и рады каждому, кто хочет
+            быть с нами.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/forum/novosti">
-              <Button size="lg">Читать новости</Button>
+            <Link href="/about">
+              <Button size="lg">О форуме</Button>
             </Link>
-            <Link href="/forum/stati">
+            <Link href="/forum/novosti">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white/60 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
               >
-                Статьи
+                Новости
               </Button>
             </Link>
           </div>

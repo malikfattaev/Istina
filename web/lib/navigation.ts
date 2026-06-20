@@ -72,9 +72,9 @@ export const usefulLinks: NavLink[] = [
     description: "Как с нами связаться",
   },
   {
-    label: "О проекте",
+    label: "О форуме",
     href: "/about",
     icon: Info,
-    description: "Что такое «Истина» и для кого она",
+    description: "Кто мы и чем занимаемся",
   },
 ];
