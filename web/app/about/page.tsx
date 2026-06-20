@@ -78,7 +78,7 @@ export default function AboutPage() {
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-sand-900">
           Зачем мы вместе
         </h2>
-        <p className="mt-2 max-w-2xl leading-relaxed text-sand-700">
+        <p className="mt-2 leading-relaxed text-sand-700">
           Главное в нашем форуме - люди. Мы собираемся, чтобы вместе расти в
           вере, становиться ближе к Церкви и друг к другу, помогать друг другу
           развиваться и поддерживать в трудных ситуациях - чтобы рядом всегда
