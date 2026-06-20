@@ -69,15 +69,9 @@ export default async function EmployeesPage() {
                         <p className="truncate font-medium text-sand-900">
                           {displayName}
                         </p>
-                        {isMe ? (
-                          <p className="text-xs uppercase tracking-wide text-clay-600">
-                            вы
-                          </p>
-                        ) : (
-                          <p className="text-xs text-sand-500">
-                            {roleLabel[user.role]}
-                          </p>
-                        )}
+                        <p className="text-xs text-sand-500">
+                          {roleLabel[user.role]}
+                        </p>
                       </div>
                     </div>
                   </td>
