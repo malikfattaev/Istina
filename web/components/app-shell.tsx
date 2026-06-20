@@ -27,7 +27,7 @@ function Brand({
           compact ? "truncate text-lg" : "text-[15px]",
         )}
       >
-        {compact ? "«Истина»" : "Молодёжный православный форум «Истина»"}
+        {compact ? "«Истина»" : "ПМФ «Истина»"}
       </span>
     </Link>
   );
