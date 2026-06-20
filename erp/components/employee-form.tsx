@@ -110,7 +110,7 @@ export function EmployeeForm({ employee }: { employee?: EmployeeData }) {
           </select>
         </div>
 
-        {state?.error ? (
+        {state && "error" in state ? (
           <p className="text-sm text-red-600">{state.error}</p>
         ) : null}
 

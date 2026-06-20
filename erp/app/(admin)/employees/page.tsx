@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Pencil, Plus, Trash2 } from "lucide-react";
+import { Pencil, Trash2 } from "lucide-react";
 import { Role, prisma } from "@istina/db";
 import { getSession } from "@/lib/auth";
 import { deleteEmployee } from "@/lib/employee-actions";
 import { avatarColor, initials } from "@/lib/avatar";
+import { AddEmployeeModal } from "@/components/add-employee-modal";
 
 const roleLabel: Record<Role, string> = {
   ADMIN: "Администратор",
@@ -31,13 +32,7 @@ export default async function EmployeesPage() {
           </h1>
           <p className="mt-1 text-sand-600">Учётные записи и доступ к ERP.</p>
         </div>
-        <Link
-          href="/employees/new"
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-clay-500 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-clay-600"
-        >
-          <Plus className="h-4 w-4" aria-hidden />
-          Добавить сотрудника
-        </Link>
+        <AddEmployeeModal />
       </div>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-sand-200 bg-white">

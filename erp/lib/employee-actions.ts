@@ -28,7 +28,7 @@ const updateSchema = z.object({
   password: z.string().optional(),
 });
 
-export type EmployeeFormState = { error: string } | null;
+export type EmployeeFormState = { error: string } | { ok: true } | null;
 
 export async function createEmployee(
   _prev: EmployeeFormState,
@@ -60,7 +60,7 @@ export async function createEmployee(
   });
 
   revalidatePath("/employees");
-  redirect("/employees");
+  return { ok: true };
 }
 
 export async function updateEmployee(
