@@ -138,6 +138,39 @@ model Tag {
   articles Article[] @relation("ArticleTags")
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// Письма: обращения с публичной формы «Контакты» (просьбы, вопросы, помощь)
+// ─────────────────────────────────────────────────────────────────────────
+
+enum MessageCategory {
+  PRAYER // Просьба помолиться
+  HELP // Просьба о помощи
+  DONATE // Хочу помочь (пожертвование, волонтёрство)
+  QUESTION // Вопрос священнику
+  OTHER // Другое
+}
+
+enum MessageStatus {
+  NEW // ещё не прочитано
+  READ // прочитано редакцией
+}
+
+model Message {
+  id         String          @id @default(cuid())
+  category   MessageCategory
+  name       String // как обращаться к отправителю
+  contact    String // эл. почта или телефон для ответа
+  prayerType String? // health | repose (только для просьбы о молитве)
+  baptized   Boolean? // крещён(а) в Православной Церкви (только для молитвы)
+  names      String? // имена для поминовения (только для молитвы)
+  body       String? // текст сообщения
+  status     MessageStatus   @default(NEW)
+  createdAt  DateTime        @default(now())
+
+  @@index([status, createdAt])
+  @@index([createdAt])
+}
+
 // Медиатека: загруженные через ERP файлы (хранятся в S3-бакете, в БД - метаданные).
 model Media {
   id           String   @id @default(cuid())

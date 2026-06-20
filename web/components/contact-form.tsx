@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Button } from "@istina/ui";
+import { submitMessage } from "@/lib/message-actions";
 
-type Category = "prayer" | "help" | "question" | "other";
+type Category = "prayer" | "help" | "donate" | "question" | "other";
 
 const categories: { value: Category; label: string }[] = [
   { value: "prayer", label: "Просьба помолиться" },
   { value: "help", label: "Просьба о помощи" },
+  { value: "donate", label: "Хочу помочь" },
   { value: "question", label: "Вопрос священнику" },
   { value: "other", label: "Другое" },
 ];
@@ -25,41 +27,39 @@ export function ContactForm() {
   const [names, setNames] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const isPrayer = category === "prayer";
+  const isDonate = category === "donate";
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setPending(true);
+    setError(null);
 
-    const categoryLabel =
-      categories.find((item) => item.value === category)?.label ?? "Обращение";
+    const result = await submitMessage({
+      category,
+      name,
+      contact,
+      prayerType: isPrayer ? prayerType : null,
+      baptized: isPrayer ? baptized === "yes" : null,
+      names: isPrayer ? names : null,
+      body: message.trim() || null,
+    });
 
-    const lines = [
-      `Тема: ${categoryLabel}`,
-      `Имя: ${name}`,
-      `Контакт для ответа: ${contact}`,
-    ];
+    setPending(false);
 
-    if (isPrayer) {
-      lines.push(`О ком: ${prayerType === "health" ? "О здравии" : "О упокоении"}`);
-      lines.push(
-        `Крещён(а) в Православной Церкви: ${baptized === "yes" ? "Да" : "Нет"}`,
-      );
-      lines.push(`Имена для поминовения: ${names}`);
+    if ("error" in result) {
+      setError(result.error);
+      return;
     }
 
-    if (message.trim()) {
-      lines.push("", message.trim());
-    }
-
-    const subject = `Истина - ${categoryLabel}`;
-    const body = lines.join("\n");
-    const href = `mailto:help@istina.uz?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = href;
     setSubmitted(true);
+    setName("");
+    setContact("");
+    setNames("");
+    setMessage("");
   }
 
   return (
@@ -201,10 +201,23 @@ export function ContactForm() {
           </>
         ) : null}
 
+        {/* Подсказка для тех, кто хочет помочь */}
+        {isDonate ? (
+          <p className="rounded-xl border border-clay-200 bg-clay-50 px-4 py-3 text-sm leading-relaxed text-sand-700">
+            Спасибо за желание помочь! Напишите, чем хотели бы поддержать -
+            пожертвование, волонтёрство или помощь делом. Мы свяжемся с вами и
+            расскажем, как это сделать.
+          </p>
+        ) : null}
+
         {/* Сообщение */}
         <div>
           <label className={labelClassName} htmlFor="message">
-            {isPrayer ? "Дополнительно (по желанию)" : "Сообщение"}
+            {isPrayer
+              ? "Дополнительно (по желанию)"
+              : isDonate
+                ? "Чем хотите помочь"
+                : "Сообщение"}
           </label>
           <textarea
             id="message"
@@ -215,20 +228,24 @@ export function ContactForm() {
             placeholder={
               isPrayer
                 ? "Если есть что добавить"
-                : "Опишите вашу просьбу или вопрос"
+                : isDonate
+                  ? "Например: хочу сделать пожертвование или помочь как волонтёр"
+                  : "Опишите вашу просьбу или вопрос"
             }
             className={`${fieldClassName} mt-1.5`}
           />
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Button type="submit">Отправить</Button>
+          <Button type="submit" disabled={pending}>
+            {pending ? "Отправляем..." : "Отправить"}
+          </Button>
           {submitted ? (
             <span className="text-sm text-sand-600">
-              Спасибо! Мы открыли почтовый клиент с готовым письмом. Если оно не
-              открылось - напишите на help@istina.uz.
+              Спасибо! Мы получили ваше обращение и ответим на указанный контакт.
             </span>
           ) : null}
+          {error ? <span className="text-sm text-red-600">{error}</span> : null}
         </div>
       </div>
     </form>

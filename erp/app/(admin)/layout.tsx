@@ -12,15 +12,19 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const user = await requireAdmin();
-  const categories = await prisma.category.findMany({
-    orderBy: { position: "asc" },
-    select: { id: true, slug: true, name: true },
-  });
+  const [categories, newMessages] = await Promise.all([
+    prisma.category.findMany({
+      orderBy: { position: "asc" },
+      select: { id: true, slug: true, name: true },
+    }),
+    prisma.message.count({ where: { status: "NEW" } }),
+  ]);
 
   return (
     <AdminShell
       user={{ username: user.username, name: user.name, title: user.title }}
       categories={categories}
+      newMessages={newMessages}
     >
       {children}
     </AdminShell>

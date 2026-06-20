@@ -7,6 +7,7 @@ import {
   Images,
   LayoutDashboard,
   LogOut,
+  Mail,
   Menu,
   Users,
   X,
@@ -28,11 +29,13 @@ function SidebarLink({
   href,
   icon: Icon,
   label,
+  badge,
   onNavigate,
 }: {
   href: string;
   icon: LucideIcon;
   label: string;
+  badge?: number;
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
@@ -51,6 +54,11 @@ function SidebarLink({
     >
       <Icon className="h-[18px] w-[18px] shrink-0" aria-hidden />
       <span className="truncate">{label}</span>
+      {badge && badge > 0 ? (
+        <span className="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-clay-500 px-1.5 text-xs font-semibold text-white">
+          {badge}
+        </span>
+      ) : null}
     </Link>
   );
 }
@@ -71,10 +79,12 @@ function NavGroup({ title, children }: { title?: string; children: ReactNode }) 
 function SidebarContent({
   user,
   categories,
+  newMessages,
   onNavigate,
 }: {
   user: ShellUser;
   categories: Category[];
+  newMessages: number;
   onNavigate?: () => void;
 }) {
   return (
@@ -112,6 +122,13 @@ function SidebarContent({
         </NavGroup>
 
         <NavGroup title="Управление">
+          <SidebarLink
+            href="/messages"
+            icon={Mail}
+            label="Письма"
+            badge={newMessages}
+            onNavigate={onNavigate}
+          />
           <SidebarLink
             href="/media"
             icon={Images}
@@ -151,10 +168,12 @@ function SidebarContent({
 export function AdminShell({
   user,
   categories,
+  newMessages,
   children,
 }: {
   user: ShellUser;
   categories: Category[];
+  newMessages: number;
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
@@ -163,7 +182,11 @@ export function AdminShell({
   return (
     <div className="min-h-dvh">
       <aside className="hidden border-r border-sand-200 bg-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-72 lg:flex-col lg:overflow-y-auto">
-        <SidebarContent user={user} categories={categories} />
+        <SidebarContent
+          user={user}
+          categories={categories}
+          newMessages={newMessages}
+        />
       </aside>
 
       <div className="flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
@@ -212,7 +235,12 @@ export function AdminShell({
             </button>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto">
-            <SidebarContent user={user} categories={categories} onNavigate={close} />
+            <SidebarContent
+              user={user}
+              categories={categories}
+              newMessages={newMessages}
+              onNavigate={close}
+            />
           </div>
         </div>
       </div>

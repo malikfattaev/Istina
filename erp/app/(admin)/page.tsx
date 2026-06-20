@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Users, type LucideIcon } from "lucide-react";
+import { Mail, Users, type LucideIcon } from "lucide-react";
 import { prisma } from "@istina/db";
 import { rubricIcon } from "@/lib/rubric-icons";
 
@@ -31,26 +31,27 @@ function QuickLink({
 }
 
 export default async function DashboardPage() {
-  const [categories, employees, total, published, drafts] = await Promise.all([
-    prisma.category.findMany({
-      orderBy: { position: "asc" },
-      select: {
-        id: true,
-        slug: true,
-        name: true,
-        _count: { select: { articles: true } },
-      },
-    }),
-    prisma.user.count(),
-    prisma.article.count(),
-    prisma.article.count({ where: { status: "PUBLISHED" } }),
-    prisma.article.count({ where: { status: "DRAFT" } }),
-  ]);
+  const [categories, employees, total, published, newMessages] =
+    await Promise.all([
+      prisma.category.findMany({
+        orderBy: { position: "asc" },
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          _count: { select: { articles: true } },
+        },
+      }),
+      prisma.user.count(),
+      prisma.article.count(),
+      prisma.article.count({ where: { status: "PUBLISHED" } }),
+      prisma.message.count({ where: { status: "NEW" } }),
+    ]);
 
   const stats = [
     { label: "Материалы всего", value: total },
     { label: "Опубликовано", value: published },
-    { label: "Черновики", value: drafts },
+    { label: "Новые письма", value: newMessages },
     { label: "Сотрудники", value: employees },
   ];
 
@@ -86,6 +87,14 @@ export default async function DashboardPage() {
             subtitle={`${category._count.articles} материалов`}
           />
         ))}
+        <QuickLink
+          href="/messages"
+          icon={Mail}
+          title="Письма"
+          subtitle={
+            newMessages > 0 ? `${newMessages} новых` : "Обращения с сайта"
+          }
+        />
         <QuickLink
           href="/employees"
           icon={Users}
