@@ -45,25 +45,38 @@ function Section({ title, items }: { title: string; items: NavLink[] }) {
 export default function HomePage() {
   return (
     <div className="flex flex-col gap-10">
-      {/* Приветствие */}
-      <section className="rounded-3xl border border-sand-200 bg-gradient-to-br from-sand-100 to-sand-50 p-8 sm:p-10">
-        <h1 className="font-serif text-3xl font-semibold tracking-tight text-sand-900 sm:text-4xl">
-          Добро пожаловать на «Истину»
-        </h1>
-        <p className="mt-3 max-w-2xl leading-relaxed text-sand-700">
-          Православный портал Узбекистана. Здесь собраны новости приходов,
-          богословие, жития святых и расписание богослужений. Выберите раздел,
-          чтобы начать чтение.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/forum/novosti">
-            <Button size="lg">Читать новости</Button>
-          </Link>
-          <Link href="/forum/stati">
-            <Button size="lg" variant="outline">
-              Статьи
-            </Button>
-          </Link>
+      {/* Приветствие - баннер с фото Свято-Успенского собора */}
+      <section className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-3xl border border-sand-200 sm:min-h-[440px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/banner.jpeg"
+          alt="Свято-Успенский кафедральный собор в Ташкенте"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
+        <div className="relative p-6 sm:p-10 lg:p-12">
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
+            Добро пожаловать на «Истину»
+          </h1>
+          <p className="mt-3 max-w-2xl leading-relaxed text-white/85">
+            Православный портал Узбекистана. Здесь собраны новости приходов,
+            богословие, жития святых и расписание богослужений. Выберите раздел,
+            чтобы начать чтение.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/forum/novosti">
+              <Button size="lg">Читать новости</Button>
+            </Link>
+            <Link href="/forum/stati">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/60 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+              >
+                Статьи
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
