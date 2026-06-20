@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getArticle } from "@/lib/articles";
 import { getRubric } from "@/lib/rubrics";
+import { sanitizeContent } from "@/lib/sanitize";
 
 export const dynamic = "force-dynamic";
 
@@ -86,9 +87,10 @@ export default async function ArticlePage({ params }: PageProps) {
         </header>
       )}
 
-      <div className="mx-auto mt-8 max-w-2xl whitespace-pre-line leading-relaxed text-sand-800">
-        {article.content}
-      </div>
+      <div
+        className="article-body mt-8"
+        dangerouslySetInnerHTML={{ __html: sanitizeContent(article.content) }}
+      />
     </article>
   );
 }

@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import { Button } from "@istina/ui";
 import { saveArticle, type ArticleFormState } from "@/lib/article-actions";
 import { MediaPicker } from "./media-picker";
+import { RichEditor } from "./rich-editor";
 import type { MediaItem } from "@/lib/media";
 
 type Category = { id: string; name: string };
@@ -152,18 +153,8 @@ export function ArticleForm({
         </div>
 
         <div>
-          <label className={label} htmlFor="content">
-            Текст
-          </label>
-          <textarea
-            id="content"
-            name="content"
-            required
-            rows={12}
-            defaultValue={article?.content ?? ""}
-            className={field}
-            placeholder="Полный текст материала"
-          />
+          <span className={label}>Текст</span>
+          <RichEditor name="content" defaultValue={article?.content ?? ""} />
         </div>
 
         <div>

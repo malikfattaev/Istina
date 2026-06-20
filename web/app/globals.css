@@ -11,3 +11,49 @@
     @apply bg-sand-50 font-sans text-sand-900 antialiased;
   }
 }
+
+/* Оформление текста материалов (HTML из редактора) и поля редактора - одинаковое. */
+@layer components {
+  .article-body > :first-child {
+    @apply mt-0;
+  }
+  .article-body p {
+    @apply mt-4 leading-relaxed text-sand-800;
+  }
+  .article-body h2 {
+    @apply mt-8 font-serif text-2xl font-semibold text-sand-900;
+  }
+  .article-body h3 {
+    @apply mt-6 text-xl font-semibold text-sand-900;
+  }
+  .article-body strong {
+    @apply font-semibold text-sand-900;
+  }
+  .article-body em {
+    @apply italic;
+  }
+  .article-body u {
+    @apply underline;
+  }
+  .article-body s {
+    @apply line-through;
+  }
+  .article-body a {
+    @apply font-medium text-clay-600 underline underline-offset-2 hover:text-clay-700;
+  }
+  .article-body ul {
+    @apply mt-4 list-disc space-y-1.5 pl-6 text-sand-800;
+  }
+  .article-body ol {
+    @apply mt-4 list-decimal space-y-1.5 pl-6 text-sand-800;
+  }
+  .article-body li {
+    @apply leading-relaxed;
+  }
+  .article-body blockquote {
+    @apply mt-4 border-l-2 border-clay-300 pl-4 italic text-sand-700;
+  }
+  .article-body hr {
+    @apply my-8 border-sand-200;
+  }
+}
