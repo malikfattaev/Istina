@@ -55,7 +55,8 @@ export async function submitMessage(input: MessageInput): Promise<SubmitResult> 
         body,
       },
     });
-  } catch {
+  } catch (e) {
+    console.error("[submitMessage] create failed:", e);
     return { error: "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz." };
   }
 
