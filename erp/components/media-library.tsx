@@ -7,7 +7,14 @@ import {
   useState,
   type DragEvent,
 } from "react";
-import { ImageOff, Loader2, Search, Trash2, UploadCloud } from "lucide-react";
+import {
+  ChevronDown,
+  ImageOff,
+  Loader2,
+  Search,
+  Trash2,
+  UploadCloud,
+} from "lucide-react";
 import { cn } from "@istina/ui";
 import type { MediaItem, MediaStats } from "@/lib/media";
 import { deleteMedia } from "@/lib/media-actions";
@@ -106,10 +113,7 @@ export function MediaLibrary({
   return (
     <div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wide text-clay-600">
-          Медиатека
-        </p>
-        <h1 className="mt-1 font-serif text-2xl font-semibold text-sand-900">
+        <h1 className="font-serif text-2xl font-semibold text-sand-900">
           Медиа
         </h1>
         <p className="mt-1 text-sand-600">
@@ -188,14 +192,20 @@ export function MediaLibrary({
             className="w-full rounded-xl border border-sand-300 bg-white py-2.5 pl-9 pr-4 text-sm text-sand-900 placeholder:text-sand-400 focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-500/30"
           />
         </div>
-        <select
-          value={sort}
-          onChange={(e) => setSort(e.target.value as "new" | "old")}
-          className="rounded-xl border border-sand-300 bg-white px-4 py-2.5 text-sm text-sand-900 focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-500/30"
-        >
-          <option value="new">Сначала новые</option>
-          <option value="old">Сначала старые</option>
-        </select>
+        <div className="relative">
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as "new" | "old")}
+            className="w-full appearance-none rounded-xl border border-sand-300 bg-white py-2.5 pl-4 pr-10 text-sm text-sand-900 focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-500/30"
+          >
+            <option value="new">Сначала новые</option>
+            <option value="old">Сначала старые</option>
+          </select>
+          <ChevronDown
+            className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-sand-400"
+            aria-hidden
+          />
+        </div>
       </div>
 
       <p className="mt-4 text-sm text-sand-500">{filtered.length} файлов</p>
