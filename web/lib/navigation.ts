@@ -1,6 +1,7 @@
 import {
   BookOpen,
   CalendarDays,
+  Flame,
   Home,
   Info,
   Mail,
@@ -45,6 +46,12 @@ export const primaryNav: NavLink[] = [
     href: "/bibliya",
     icon: BookOpen,
     description: "Ветхий и Новый Завет в Синодальном переводе",
+  },
+  {
+    label: "Молитвы",
+    href: "/molitvy",
+    icon: Flame,
+    description: "Утренние, вечерние и молитвы на каждый день",
   },
 ];
 
