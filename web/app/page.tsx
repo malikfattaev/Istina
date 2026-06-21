@@ -52,8 +52,10 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
-        <div className="relative p-6 sm:p-10 lg:p-12">
-          <h1 className="font-serif text-2xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl">
+        <div className="relative p-6 [container-type:inline-size] sm:p-10 lg:p-12">
+          {/* Кегль масштабируется по ширине баннера (cqi), чтобы название */}
+          {/* всегда умещалось в одну строку; на узких экранах - перенос. */}
+          <h1 className="font-serif font-semibold tracking-tight text-white drop-shadow-sm whitespace-normal sm:whitespace-nowrap text-2xl sm:text-[clamp(1.5rem,4.6cqi,2.75rem)]">
             Православный молодёжный форум «Истина»
           </h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/85">
