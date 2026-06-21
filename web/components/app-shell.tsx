@@ -24,7 +24,7 @@ function Brand({
       <span
         className={cn(
           "block font-serif font-semibold leading-snug tracking-tight text-sand-900",
-          compact ? "truncate text-lg" : "text-[15px]",
+          compact ? "truncate text-lg" : "text-2xl",
         )}
       >
         {compact ? "«Истина»" : "ПМФ «Истина»"}
