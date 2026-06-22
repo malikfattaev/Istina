@@ -134,20 +134,20 @@ export default function AboutPage() {
           развиваться и поддерживать в трудных ситуациях - чтобы рядом всегда
           были те, на кого можно положиться.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid auto-rows-fr gap-4 sm:grid-cols-2">
           {values.map((value) => {
             const Icon = value.icon;
             return (
               <div
                 key={value.title}
-                className="flex items-start gap-4 rounded-2xl border border-sand-200 bg-white p-5"
+                className="flex h-full items-start gap-4 rounded-2xl border border-sand-200 bg-white p-4"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand-100 text-clay-600">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0">
                   <h3 className="font-semibold text-sand-900">{value.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-sand-600">
+                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-sand-600">
                     {value.text}
                   </p>
                 </div>
