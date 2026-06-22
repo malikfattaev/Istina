@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { getDailyVerse } from "@/lib/daily-verse";
 import "./globals.css";
 
@@ -39,7 +40,9 @@ export default async function RootLayout({
   return (
     <html lang="ru" className={`${sans.variable} ${serif.variable}`}>
       <body>
-        <AppShell dailyVerse={dailyVerse}>{children}</AppShell>
+        <SmoothScroll>
+          <AppShell dailyVerse={dailyVerse}>{children}</AppShell>
+        </SmoothScroll>
       </body>
     </html>
   );

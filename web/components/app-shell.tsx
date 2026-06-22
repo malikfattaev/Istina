@@ -131,7 +131,10 @@ export function AppShell({
   return (
     <div className="min-h-dvh">
       {/* Десктопный сайдбар */}
-      <aside className="hidden border-r border-sand-200 bg-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-72 lg:flex-col lg:overflow-y-auto">
+      <aside
+        data-lenis-prevent
+        className="hidden border-r border-sand-200 bg-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-72 lg:flex-col lg:overflow-y-auto"
+      >
         <SidebarContent dailyVerse={dailyVerse} />
       </aside>
 
@@ -180,7 +183,7 @@ export function AppShell({
               <X className="h-5 w-5" aria-hidden />
             </button>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto">
+          <div data-lenis-prevent className="min-h-0 flex-1 overflow-y-auto">
             <SidebarContent dailyVerse={dailyVerse} onNavigate={close} />
           </div>
         </div>
