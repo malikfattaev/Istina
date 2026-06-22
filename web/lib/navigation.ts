@@ -1,6 +1,7 @@
 import {
   BookOpen,
   CalendarDays,
+  Cross,
   Flame,
   Home,
   Info,
@@ -52,6 +53,12 @@ export const primaryNav: NavLink[] = [
     href: "/molitvy",
     icon: Flame,
     description: "Утренние, вечерние и молитвы на каждый день",
+  },
+  {
+    label: "Основы веры",
+    href: "/osnovy",
+    icon: Cross,
+    description: "Кратко о главном: вера, Троица, Церковь, заповеди",
   },
 ];
 
