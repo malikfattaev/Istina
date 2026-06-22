@@ -1775,7 +1775,7 @@ export const prayerSets: PrayerSet[] = [
       },
       {
         "type": "text",
-        "content": "Иисусу: Господи Иисусе Христе Боже мой, помилуй мя."
+        "content": "Господи Иисусе Христе, Боже мой, помилуй меня."
       },
       {
         "type": "text",
