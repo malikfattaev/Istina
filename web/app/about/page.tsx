@@ -1,17 +1,68 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
+  BookOpen,
+  CalendarDays,
+  Cross,
+  FileText,
+  Flame,
   HeartHandshake,
   LifeBuoy,
   Sparkles,
   Users,
   type LucideIcon,
 } from "lucide-react";
+import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
   title: "О форуме",
   description:
-    "«Истина» - православный молодёжный форум при Свято-Успенском кафедральном соборе в Ташкенте.",
+    "«Истина» - православный молодёжный форум при Свято-Успенском кафедральном соборе в Ташкенте. Библия, молитвы, основы веры и статьи - всё в одном месте.",
 };
+
+const resources: {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+  href: string;
+}[] = [
+  {
+    icon: BookOpen,
+    title: "Библия",
+    text: "Ветхий и Новый Завет в Синодальном переводе - читать онлайн в любое время.",
+    href: "/bibliya",
+  },
+  {
+    icon: Flame,
+    title: "Молитвы",
+    text: "Утренние и вечерние молитвы, на каждый день и правило ко Святому Причащению.",
+    href: "/molitvy",
+  },
+  {
+    icon: Cross,
+    title: "Основы веры",
+    text: "Кратко и по канонам: вера, Святая Троица, Церковь, Таинства и заповеди.",
+    href: "/osnovy",
+  },
+  {
+    icon: FileText,
+    title: "Статьи",
+    text: "Богословие, жития святых и ответы на вопросы о вере и жизни христианина.",
+    href: "/forum/stati",
+  },
+  {
+    icon: CalendarDays,
+    title: "Календарь",
+    text: "Православный календарь: праздники, посты и память святых на каждый день.",
+    href: "/prazdniki",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Помощь",
+    text: "Тем, кому нужна поддержка, и тем, кто готов помочь, - материалы и просьбы.",
+    href: "/forum/pomoshch",
+  },
+];
 
 const values: { icon: LucideIcon; title: string; text: string }[] = [
   {
@@ -101,6 +152,43 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Чем полезен сайт */}
+      <section className="mt-10">
+        <h2 className="font-serif text-2xl font-semibold tracking-tight text-sand-900">
+          Что есть на сайте
+        </h2>
+        <p className="mt-2 leading-relaxed text-sand-700">
+          «Истина» - это не только встречи и выезды. Наш сайт сам по себе
+          помощник в вере: здесь под рукой Священное Писание, молитвы на каждый
+          день, основы православия простыми словами и статьи о вере. Всё в одном
+          месте, бесплатно и без регистрации - пользуйтесь и делитесь с
+          близкими.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {resources.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex flex-col rounded-2xl border border-sand-200 bg-white p-5 transition-all hover:border-clay-300 hover:shadow-sm"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sand-100 text-clay-600">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 flex items-center gap-1 font-semibold text-sand-900">
+                  {item.title}
+                  <HoverArrow className="text-clay-500" />
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-sand-600">
+                  {item.text}
+                </p>
+              </Link>
             );
           })}
         </div>
