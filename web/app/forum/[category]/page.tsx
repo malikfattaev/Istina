@@ -52,12 +52,12 @@ export default async function RubricPage({ params }: PageProps) {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-sand-200 bg-white transition-all hover:-translate-y-0.5 hover:border-clay-300 hover:shadow-md sm:flex-row"
               >
                 {article.coverImage ? (
-                  <div className="shrink-0 overflow-hidden sm:w-60">
+                  <div className="relative h-48 shrink-0 overflow-hidden sm:h-auto sm:w-60">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={article.coverImage}
                       alt={article.title}
-                      className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-full"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ) : null}
@@ -65,14 +65,12 @@ export default async function RubricPage({ params }: PageProps) {
                   <p className="text-xs font-medium uppercase tracking-wide text-clay-600">
                     {article.date}
                   </p>
-                  <h2 className="mt-1.5 text-lg font-semibold text-sand-900 transition-colors group-hover:text-clay-700">
+                  <h2 className="mt-1.5 line-clamp-2 min-h-[3.5rem] text-lg font-semibold text-sand-900 transition-colors group-hover:text-clay-700">
                     {article.title}
                   </h2>
-                  {article.excerpt ? (
-                    <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-sand-600">
-                      {article.excerpt}
-                    </p>
-                  ) : null}
+                  <p className="mt-1.5 line-clamp-2 min-h-[2.85rem] text-sm leading-relaxed text-sand-600">
+                    {article.excerpt}
+                  </p>
                   <span className="mt-auto flex items-center gap-1 pt-4 text-sm font-medium text-clay-600">
                     Читать
                     <HoverArrow />
