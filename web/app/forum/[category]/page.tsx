@@ -61,14 +61,14 @@ export default async function RubricPage({ params }: PageProps) {
                     />
                   </div>
                 ) : null}
-                <div className="flex min-w-0 flex-1 flex-col p-5">
+                <div className="flex min-h-[13rem] min-w-0 flex-1 flex-col p-5">
                   <p className="text-xs font-medium uppercase tracking-wide text-clay-600">
                     {article.date}
                   </p>
-                  <h2 className="mt-1.5 line-clamp-2 min-h-[3.5rem] text-lg font-semibold text-sand-900 transition-colors group-hover:text-clay-700">
+                  <h2 className="mt-1.5 line-clamp-2 text-lg font-semibold text-sand-900 transition-colors group-hover:text-clay-700">
                     {article.title}
                   </h2>
-                  <p className="mt-1.5 line-clamp-2 min-h-[2.85rem] text-sm leading-relaxed text-sand-600">
+                  <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-sand-600">
                     {article.excerpt}
                   </p>
                   <span className="mt-auto flex items-center gap-1 pt-4 text-sm font-medium text-clay-600">
