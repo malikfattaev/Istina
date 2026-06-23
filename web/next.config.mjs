@@ -13,7 +13,8 @@ const nextConfig = {
   transpilePackages: ["@istina/ui", "@istina/db"],
   reactStrictMode: true,
   poweredByHeader: false,
-  // Раздел «Евангелие» переименован в «Библия» - старые ссылки ведём на новый путь.
+  // Старые пути ведём на новые: «Евангелие» -> «Библия», «форум» -> «клуб»
+  // (ребрендинг ПМФ -> ПМК «Истина»).
   async redirects() {
     return [
       { source: "/evangelie", destination: "/bibliya", permanent: true },
@@ -22,6 +23,8 @@ const nextConfig = {
         destination: "/bibliya/:book/:chapter",
         permanent: true,
       },
+      { source: "/forum", destination: "/club", permanent: true },
+      { source: "/forum/:path*", destination: "/club/:path*", permanent: true },
     ];
   },
 };

@@ -86,7 +86,7 @@ export const usefulLinks: NavLink[] = [
     description: "Как с нами связаться",
   },
   {
-    label: "О форуме",
+    label: "О клубе",
     href: "/about",
     icon: Info,
     description: "Кто мы и чем занимаемся",

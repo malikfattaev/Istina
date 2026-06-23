@@ -15,9 +15,9 @@ import {
 import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
-  title: "О форуме",
+  title: "О клубе",
   description:
-    "«Истина» - православный молодёжный форум при Свято-Успенском кафедральном соборе в Ташкенте. Библия, молитвы, основы веры и статьи - всё в одном месте.",
+    "«Истина» - православный молодёжный клуб при Свято-Успенском кафедральном соборе в Ташкенте. Библия, молитвы, основы веры и статьи - всё в одном месте.",
 };
 
 const resources: {
@@ -48,7 +48,7 @@ const resources: {
     icon: FileText,
     title: "Статьи",
     text: "Богословие, жития святых и ответы на вопросы о вере и жизни христианина.",
-    href: "/forum/stati",
+    href: "/club/stati",
   },
   {
     icon: CalendarDays,
@@ -60,7 +60,7 @@ const resources: {
     icon: HeartHandshake,
     title: "Помощь",
     text: "Тем, кому нужна поддержка, и тем, кто готов помочь, - материалы и просьбы.",
-    href: "/forum/pomoshch",
+    href: "/club/pomoshch",
   },
 ];
 
@@ -101,17 +101,17 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/40 to-sand-950/10" />
         <div className="relative p-6 sm:p-10">
           <h1 className="font-serif text-3xl font-semibold tracking-tight text-white drop-shadow-sm sm:text-4xl">
-            О форуме
+            О клубе
           </h1>
           <p className="mt-2 max-w-2xl leading-relaxed text-white/85">
-            Православный молодёжный форум «Истина».
+            Православный молодёжный клуб «Истина».
           </p>
         </div>
       </section>
 
       <div className="space-y-4 leading-relaxed text-sand-700">
         <p>
-          «Истина» - православный молодёжный форум при Свято-Успенском
+          «Истина» - православный молодёжный клуб при Свято-Успенском
           кафедральном соборе (Собор Успения Божией Матери) в Ташкенте. Это
           команда молодых ребят, которые живут верой и хотят быть полезными
           храму и людям.
@@ -123,13 +123,13 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* Цель форума */}
+      {/* Цель клуба */}
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-sand-900">
           Зачем мы вместе
         </h2>
         <p className="mt-2 leading-relaxed text-sand-700">
-          Главное в нашем форуме - люди. Мы собираемся, чтобы вместе расти в
+          Главное в нашем клубе - люди. Мы собираемся, чтобы вместе расти в
           вере, становиться ближе к Церкви и друг к другу, помогать друг другу
           развиваться и поддерживать в трудных ситуациях - чтобы рядом всегда
           были те, на кого можно положиться.
@@ -163,7 +163,7 @@ export default function AboutPage() {
           Что есть на сайте
         </h2>
         <p className="mt-2 leading-relaxed text-sand-700">
-          ПМФ «Истина» - это не только встречи и выезды. Наш сайт сам по себе
+          ПМК «Истина» - это не только встречи и выезды. Наш сайт сам по себе
           помощник в вере: здесь под рукой Священное Писание, молитвы на каждый
           день, основы православия простыми словами и статьи о вере. Всё в одном
           месте, бесплатно и без регистрации - пользуйтесь и делитесь с

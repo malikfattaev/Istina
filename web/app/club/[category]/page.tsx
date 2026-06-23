@@ -48,7 +48,7 @@ export default async function RubricPage({ params }: PageProps) {
           {articles.map((article) => (
             <li key={article.slug}>
               <Link
-                href={`/forum/${rubric.slug}/${article.slug}`}
+                href={`/club/${rubric.slug}/${article.slug}`}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-sand-200 bg-white transition-all hover:-translate-y-0.5 hover:border-clay-300 hover:shadow-md sm:flex-row"
               >
                 {article.coverImage ? (

@@ -59,7 +59,7 @@ export default async function DashboardPage() {
     <div>
       <h1 className="font-serif text-2xl font-semibold text-sand-900">Обзор</h1>
       <p className="mt-1 text-sand-600">
-        Панель управления форумом «Истина».
+        Панель управления клубом «Истина».
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

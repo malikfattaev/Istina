@@ -27,7 +27,7 @@ function Brand({
           compact ? "truncate text-lg" : "text-2xl",
         )}
       >
-        ПМФ «Истина»
+        ПМК «Истина»
       </span>
     </Link>
   );

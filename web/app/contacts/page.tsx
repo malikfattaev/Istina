@@ -6,7 +6,7 @@ import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
   title: "Контакты",
-  description: "Как связаться с молодёжным форумом «Истина».",
+  description: "Как связаться с молодёжным клубом «Истина».",
 };
 
 type Contact = {
@@ -58,7 +58,7 @@ export default function ContactsPage() {
       <div>
         <PageHeader
           title="Контакты"
-          description="Свяжитесь с командой форума по любым вопросам - участие, помощь и сотрудничество."
+          description="Свяжитесь с командой клуба по любым вопросам - участие, помощь и сотрудничество."
         />
         <div className="grid gap-4 sm:grid-cols-2">
           {contacts.map((contact) => (

@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: PageProps) {
   return (
     <article>
       <Link
-        href={`/forum/${rubric.slug}`}
+        href={`/club/${rubric.slug}`}
         className="group inline-flex items-center gap-1.5 text-sm font-medium text-clay-600 transition-colors hover:text-clay-700"
       >
         <ArrowLeft

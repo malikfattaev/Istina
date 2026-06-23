@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "Истина | %s",
   },
   description:
-    "Панель управления форумом «Истина»: статьи, рубрики и команда.",
+    "Панель управления клубом «Истина»: статьи, рубрики и команда.",
   robots: { index: false, follow: false },
 };
 

@@ -56,7 +56,7 @@ export default function HomePage() {
           {/* Кегль масштабируется по ширине баннера (cqi), чтобы название */}
           {/* всегда умещалось в одну строку; на узких экранах - перенос. */}
           <h1 className="font-serif font-semibold tracking-tight text-white drop-shadow-sm whitespace-normal sm:whitespace-nowrap text-2xl sm:text-[clamp(1.5rem,4.6cqi,2.75rem)]">
-            Православный молодёжный форум «Истина»
+            Православный молодёжный клуб «Истина»
           </h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/85">
             Команда молодых христиан при Свято-Успенском кафедральном соборе в
@@ -66,9 +66,9 @@ export default function HomePage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/about">
-              <Button size="lg">О форуме</Button>
+              <Button size="lg">О клубе</Button>
             </Link>
-            <Link href="/forum/novosti">
+            <Link href="/club/novosti">
               <Button
                 size="lg"
                 variant="outline"

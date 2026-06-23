@@ -22,7 +22,7 @@ export const articleRubrics: Rubric[] = [
   {
     slug: "novosti",
     title: "Новости",
-    description: "Жизнь форума и новости собора.",
+    description: "Жизнь клуба и новости собора.",
     icon: Newspaper,
   },
   {
@@ -46,7 +46,7 @@ export const articleRubrics: Rubric[] = [
   {
     slug: "hramy",
     title: "Храмы",
-    description: "Храмы с молодёжными форумами.",
+    description: "Храмы с молодёжными клубами.",
     icon: Church,
   },
 ];
@@ -58,5 +58,5 @@ export function getRubric(slug: string): Rubric | undefined {
 }
 
 export function rubricHref(slug: string): string {
-  return `/forum/${slug}`;
+  return `/club/${slug}`;
 }
