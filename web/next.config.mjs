@@ -13,8 +13,7 @@ const nextConfig = {
   transpilePackages: ["@vnls/ui", "@vnls/db"],
   reactStrictMode: true,
   poweredByHeader: false,
-  // Старые пути ведём на новые: «Евангелие» -> «Библия», «форум» -> «клуб»
-  // (ребрендинг ПМФ -> ПМК «Истина»).
+  // Старые пути ведём на новые: «Евангелие» -> «Библия», «форум» -> «клуб».
   async redirects() {
     return [
       { source: "/evangelie", destination: "/bibliya", permanent: true },

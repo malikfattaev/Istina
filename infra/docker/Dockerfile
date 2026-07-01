@@ -4,8 +4,8 @@
 # Какое приложение собирать, задаётся build-аргументом APP (web | erp).
 # Контекст сборки - корень репозитория.
 #
-#   docker build -f infra/docker/Dockerfile --build-arg APP=web -t istina-web .
-#   docker build -f infra/docker/Dockerfile --build-arg APP=erp -t istina-erp .
+#   docker build -f infra/docker/Dockerfile --build-arg APP=web -t vnls-web .
+#   docker build -f infra/docker/Dockerfile --build-arg APP=erp -t vnls-erp .
 
 ARG NODE_VERSION=22
 
@@ -33,7 +33,7 @@ COPY --from=pruner /app/out/json/ .
 RUN pnpm install --frozen-lockfile
 # Затем исходники и сборка.
 COPY --from=pruner /app/out/full/ .
-RUN pnpm --filter @istina/db run db:generate
+RUN pnpm --filter @vnls/db run db:generate
 RUN pnpm --filter "${APP}" run build
 # Query engine Prisma не попадает в standalone-трейс автоматически -
 # кладём его рядом с приложением, где Prisma его ищет (/app/<app>/.prisma/client).
