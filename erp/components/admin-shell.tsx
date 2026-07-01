@@ -13,7 +13,7 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import { signOut } from "@/lib/actions";
 import { rubricIcon } from "@/lib/rubric-icons";
 
@@ -94,8 +94,8 @@ function SidebarContent({
         onClick={onNavigate}
         className="flex items-center px-2 py-1"
       >
-        <span className="text-lg font-semibold tracking-tight text-sand-900">
-          Истина ERP
+        <span className="text-base font-semibold leading-snug tracking-tight text-sand-900">
+          ПМК во имя святых мучениц Веры, Надежды, Любови и матери их Софии
         </span>
       </Link>
 
@@ -190,8 +190,10 @@ export function AdminShell({
       </aside>
 
       <div className="flex h-14 items-center justify-between border-b border-sand-200 bg-sand-50 px-4 lg:hidden">
-        <Link href="/" className="flex items-center">
-          <span className="font-semibold text-sand-900">Истина ERP</span>
+        <Link href="/" className="flex min-w-0 items-center">
+          <span className="truncate font-semibold text-sand-900">
+            ПМК во имя святых мучениц Веры, Надежды, Любови и матери их Софии
+          </span>
         </Link>
         <button
           type="button"

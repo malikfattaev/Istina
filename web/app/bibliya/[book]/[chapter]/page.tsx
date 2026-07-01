@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import { bibleBooks, getBook, getChapter, type BibleBook } from "@/lib/bible";
 
 type PageProps = {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { type LucideIcon } from "lucide-react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 import { rubrics, usefulLinks, type NavLink } from "@/lib/navigation";
 import { HoverArrow } from "@/components/hover-arrow";
 
@@ -53,10 +53,11 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sand-950/85 via-sand-950/45 to-sand-950/10" />
         <div className="relative p-6 [container-type:inline-size] sm:p-10 lg:p-12">
-          {/* Кегль масштабируется по ширине баннера (cqi), чтобы название */}
-          {/* всегда умещалось в одну строку; на узких экранах - перенос. */}
-          <h1 className="font-serif font-semibold tracking-tight text-white drop-shadow-sm whitespace-normal sm:whitespace-nowrap text-2xl sm:text-[clamp(1.5rem,4.6cqi,2.75rem)]">
-            Православный молодёжный клуб «Истина»
+          {/* Кегль масштабируется по ширине баннера (cqi); название длинное, */}
+          {/* поэтому перенос строк разрешён на всех размерах экрана. */}
+          <h1 className="font-serif font-semibold tracking-tight text-white drop-shadow-sm text-2xl sm:text-[clamp(1.25rem,4cqi,2.25rem)]">
+            Православный молодёжный клуб во имя святых мучениц Веры, Надежды,
+            Любови и матери их Софии
           </h1>
           <p className="mt-3 max-w-2xl leading-relaxed text-white/85">
             Команда молодых христиан при Свято-Успенском кафедральном соборе в

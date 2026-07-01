@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { Menu, X, type LucideIcon } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import { primaryNav, rubrics, usefulLinks, type NavLink } from "@/lib/navigation";
 import type { DailyVerse } from "@/lib/daily-verse";
 
@@ -24,10 +24,10 @@ function Brand({
       <span
         className={cn(
           "block font-serif font-semibold leading-snug tracking-tight text-sand-900",
-          compact ? "truncate text-lg" : "text-2xl",
+          compact ? "truncate text-lg" : "text-base",
         )}
       >
-        ПМК «Истина»
+        ПМК во имя святых мучениц Веры, Надежды, Любови и матери их Софии
       </span>
     </Link>
   );

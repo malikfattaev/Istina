@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import { PageHeader } from "@/components/page-header";
 import { EmptyState } from "@/components/empty-state";
 import { getDailyCommemoration } from "@/lib/saints";

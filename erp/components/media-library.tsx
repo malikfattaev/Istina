@@ -15,7 +15,7 @@ import {
   Trash2,
   UploadCloud,
 } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import type { MediaItem, MediaStats } from "@/lib/media";
 import { deleteMedia } from "@/lib/media-actions";
 import { formatBytes, formatDate } from "@/lib/format";

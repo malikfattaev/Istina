@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import preset from "@istina/config/tailwind";
+import preset from "@vnls/config/tailwind";
 
 export default {
   presets: [preset],

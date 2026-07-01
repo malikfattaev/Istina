@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { Role, hashPassword, prisma } from "@istina/db";
+import { Role, hashPassword, prisma } from "@vnls/db";
 import { requireAdmin } from "@/lib/auth";
 
 const fields = {

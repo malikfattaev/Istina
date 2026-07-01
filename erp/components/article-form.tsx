@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 import { saveArticle, type ArticleFormState } from "@/lib/article-actions";
 import { MediaPicker } from "./media-picker";
 import { RichEditor } from "./rich-editor";

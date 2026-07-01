@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Pencil, Plus, Trash2 } from "lucide-react";
-import { ArticleStatus, prisma } from "@istina/db";
+import { ArticleStatus, prisma } from "@vnls/db";
 import { deleteArticle } from "@/lib/article-actions";
 
 const statusLabel: Record<ArticleStatus, string> = {

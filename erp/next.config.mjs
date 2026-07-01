@@ -7,7 +7,7 @@ const monorepoRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..
 const nextConfig = {
   output: "standalone",
   outputFileTracingRoot: monorepoRoot,
-  transpilePackages: ["@istina/ui", "@istina/db"],
+  transpilePackages: ["@vnls/ui", "@vnls/db"],
   reactStrictMode: true,
   poweredByHeader: false,
 };

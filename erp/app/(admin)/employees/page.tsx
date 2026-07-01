@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Pencil, Trash2 } from "lucide-react";
-import { Role, prisma } from "@istina/db";
+import { Role, prisma } from "@vnls/db";
 import { getSession } from "@/lib/auth";
 import { deleteEmployee } from "@/lib/employee-actions";
 import { avatarColor, initials } from "@/lib/avatar";

@@ -2,7 +2,7 @@
 
 import { useRef, useState, type ChangeEvent } from "react";
 import { Loader2, X } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 import type { MediaItem } from "@/lib/media";
 import { uploadFile } from "@/lib/upload-client";
 

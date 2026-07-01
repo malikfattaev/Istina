@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { imageSize } from "image-size";
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 import { getSession } from "@/lib/auth";
 import {
   buildKey,

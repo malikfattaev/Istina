@@ -1,5 +1,5 @@
 import { Check, Mail, RotateCcw, Trash2 } from "lucide-react";
-import { MessageCategory, MessageStatus, prisma } from "@istina/db";
+import { MessageCategory, MessageStatus, prisma } from "@vnls/db";
 import { requireAdmin } from "@/lib/auth";
 import { deleteMessage, setMessageStatus } from "@/lib/message-actions";
 

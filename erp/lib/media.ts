@@ -1,4 +1,4 @@
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 
 export type MediaItem = {
   id: string;

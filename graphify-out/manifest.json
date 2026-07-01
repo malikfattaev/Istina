@@ -1,0 +1,567 @@
+{
+  "/Users/macbookair/Documents/Projects/Istina/.claude/launch.json": {
+    "mtime": 1782000311.871723,
+    "ast_hash": "8038cbff057e3df37cff2252fa7779f9",
+    "semantic_hash": "8038cbff057e3df37cff2252fa7779f9"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/.eslintrc.json": {
+    "mtime": 1781855682.5843801,
+    "ast_hash": "5cc89077d438e3d0d0a8308ab7e06a5a",
+    "semantic_hash": "5cc89077d438e3d0d0a8308ab7e06a5a"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/articles/[id]/page.tsx": {
+    "mtime": 1781915912.5903103,
+    "ast_hash": "08a871f0a314898fca8b794ea2a6fe5a",
+    "semantic_hash": "08a871f0a314898fca8b794ea2a6fe5a"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/employees/[id]/page.tsx": {
+    "mtime": 1781953689.3446476,
+    "ast_hash": "6342d9ca15da2978aaf32cf11aa74740",
+    "semantic_hash": "6342d9ca15da2978aaf32cf11aa74740"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/employees/page.tsx": {
+    "mtime": 1781954820.750147,
+    "ast_hash": "73e1aa301765b1908644e910f7a9ea69",
+    "semantic_hash": "73e1aa301765b1908644e910f7a9ea69"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/layout.tsx": {
+    "mtime": 1781924651.4917111,
+    "ast_hash": "0ef62765409a7c124be24405aac738f6",
+    "semantic_hash": "0ef62765409a7c124be24405aac738f6"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/media/page.tsx": {
+    "mtime": 1781915788.7833633,
+    "ast_hash": "097404197ff975f3e56b03a010830540",
+    "semantic_hash": "097404197ff975f3e56b03a010830540"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/messages/page.tsx": {
+    "mtime": 1781955047.0634336,
+    "ast_hash": "fc9249381a219afd59856c333e01b590",
+    "semantic_hash": "fc9249381a219afd59856c333e01b590"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/page.tsx": {
+    "mtime": 1782175585.330845,
+    "ast_hash": "681c6d5c945f311c87fa3db33aa48ddd",
+    "semantic_hash": "681c6d5c945f311c87fa3db33aa48ddd"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/r/[category]/new/page.tsx": {
+    "mtime": 1781915892.5211186,
+    "ast_hash": "82affdb65f7773e79cd0de84ae972fad",
+    "semantic_hash": "82affdb65f7773e79cd0de84ae972fad"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/(admin)/r/[category]/page.tsx": {
+    "mtime": 1781863056.2788155,
+    "ast_hash": "66ccfdf0751f611b0648472418bce08c",
+    "semantic_hash": "66ccfdf0751f611b0648472418bce08c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/api/health/route.ts": {
+    "mtime": 1781855682.592877,
+    "ast_hash": "e583a05d7ed3f1a88968c6cec1b09c8b",
+    "semantic_hash": "e583a05d7ed3f1a88968c6cec1b09c8b"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/api/media/[...key]/route.ts": {
+    "mtime": 1781955454.5442224,
+    "ast_hash": "5011d6faf5831c9845fd2db464ef74af",
+    "semantic_hash": "5011d6faf5831c9845fd2db464ef74af"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/api/upload/route.ts": {
+    "mtime": 1781955432.4673367,
+    "ast_hash": "838310975296510a0138f01e822b3ece",
+    "semantic_hash": "838310975296510a0138f01e822b3ece"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/layout.tsx": {
+    "mtime": 1782175585.3306496,
+    "ast_hash": "74519958ed9d0b1d3fa2ebe55ad31454",
+    "semantic_hash": "74519958ed9d0b1d3fa2ebe55ad31454"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/login/actions.ts": {
+    "mtime": 1781862865.9232926,
+    "ast_hash": "288d4327f840da260ccbac7f5ca5fc95",
+    "semantic_hash": "288d4327f840da260ccbac7f5ca5fc95"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/app/login/page.tsx": {
+    "mtime": 1781955002.0573342,
+    "ast_hash": "a3cbb1b4a9199ca48b4b1f9ebc540c3a",
+    "semantic_hash": "a3cbb1b4a9199ca48b4b1f9ebc540c3a"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/add-employee-modal.tsx": {
+    "mtime": 1781954979.104619,
+    "ast_hash": "86e55933e8a0c16f6751d3c2db5edc11",
+    "semantic_hash": "86e55933e8a0c16f6751d3c2db5edc11"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/admin-shell.tsx": {
+    "mtime": 1781955053.8100576,
+    "ast_hash": "674f43d85ec89c3789a5232b661992b8",
+    "semantic_hash": "674f43d85ec89c3789a5232b661992b8"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/article-form.tsx": {
+    "mtime": 1781954989.7502985,
+    "ast_hash": "4ddbac929d881b5d8b710315345eb5ef",
+    "semantic_hash": "4ddbac929d881b5d8b710315345eb5ef"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/employee-form.tsx": {
+    "mtime": 1781954995.1149278,
+    "ast_hash": "de4e11a073f32cece1bc66ddd6f9a11b",
+    "semantic_hash": "de4e11a073f32cece1bc66ddd6f9a11b"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/media-library.tsx": {
+    "mtime": 1781955529.3260677,
+    "ast_hash": "969cc0d175a3e3f543529272bebe2fb4",
+    "semantic_hash": "969cc0d175a3e3f543529272bebe2fb4"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/media-picker.tsx": {
+    "mtime": 1781955561.3979487,
+    "ast_hash": "b823f0c47e892719a89cae28aa6330e7",
+    "semantic_hash": "b823f0c47e892719a89cae28aa6330e7"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/components/rich-editor.tsx": {
+    "mtime": 1781955015.0541506,
+    "ast_hash": "ecd3af9a435027a669fa1487b76bbe92",
+    "semantic_hash": "ecd3af9a435027a669fa1487b76bbe92"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/actions.ts": {
+    "mtime": 1781861132.5751507,
+    "ast_hash": "b5624e4da408c7fedbc1535b0d59e3b0",
+    "semantic_hash": "b5624e4da408c7fedbc1535b0d59e3b0"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/article-actions.ts": {
+    "mtime": 1781916736.405468,
+    "ast_hash": "fbbbeb83afc01b8b67ec77c6f76c2b6c",
+    "semantic_hash": "fbbbeb83afc01b8b67ec77c6f76c2b6c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/auth.ts": {
+    "mtime": 1781862854.1785817,
+    "ast_hash": "6aa3b579b4084948c7aa2ccdb1c65b5f",
+    "semantic_hash": "6aa3b579b4084948c7aa2ccdb1c65b5f"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/avatar.ts": {
+    "mtime": 1781863133.3809729,
+    "ast_hash": "fd9fce9cf4ed1a24c22044fc926d5cbb",
+    "semantic_hash": "fd9fce9cf4ed1a24c22044fc926d5cbb"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/employee-actions.ts": {
+    "mtime": 1781916270.8594859,
+    "ast_hash": "ed6261c9aea23ea6af33301b7e2fe35e",
+    "semantic_hash": "ed6261c9aea23ea6af33301b7e2fe35e"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/format.ts": {
+    "mtime": 1781915697.9388263,
+    "ast_hash": "d9892ba2c48c834ec8bb2dea29134fc2",
+    "semantic_hash": "d9892ba2c48c834ec8bb2dea29134fc2"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/media-actions.ts": {
+    "mtime": 1781915672.4175258,
+    "ast_hash": "ed54406b30b0eeab0a1425ace710ebf2",
+    "semantic_hash": "ed54406b30b0eeab0a1425ace710ebf2"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/media.ts": {
+    "mtime": 1781915666.307581,
+    "ast_hash": "c391c5a7d8313f92a7a4648d220e6b95",
+    "semantic_hash": "c391c5a7d8313f92a7a4648d220e6b95"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/message-actions.ts": {
+    "mtime": 1781924560.6276302,
+    "ast_hash": "0fb6b418b5cbec25eaed8b911783535d",
+    "semantic_hash": "0fb6b418b5cbec25eaed8b911783535d"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/rubric-icons.ts": {
+    "mtime": 1781910278.2532787,
+    "ast_hash": "915ec60d11fc899c04852fb47a3f349c",
+    "semantic_hash": "915ec60d11fc899c04852fb47a3f349c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/storage.ts": {
+    "mtime": 1781955441.9879363,
+    "ast_hash": "e4c3113ee45e0a6bfa575d92e79e07c5",
+    "semantic_hash": "e4c3113ee45e0a6bfa575d92e79e07c5"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/lib/upload-client.ts": {
+    "mtime": 1781955413.742743,
+    "ast_hash": "9815adc464ad9de4b30bc5c7b87e0b1c",
+    "semantic_hash": "9815adc464ad9de4b30bc5c7b87e0b1c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/next.config.mjs": {
+    "mtime": 1781855682.5828977,
+    "ast_hash": "99ad0df41f1bb9070cee3330ec13d6e1",
+    "semantic_hash": "99ad0df41f1bb9070cee3330ec13d6e1"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/package.json": {
+    "mtime": 1781917698.5085187,
+    "ast_hash": "632c89e51cef01196f08e25f90058dd9",
+    "semantic_hash": "632c89e51cef01196f08e25f90058dd9"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/postcss.config.mjs": {
+    "mtime": 1781855682.5825796,
+    "ast_hash": "e5f291ae7dc8b9e462f4bc232849464c",
+    "semantic_hash": "e5f291ae7dc8b9e462f4bc232849464c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/tailwind.config.ts": {
+    "mtime": 1781855682.5836346,
+    "ast_hash": "dea43ff0dabced3f64d3537efde661a5",
+    "semantic_hash": "dea43ff0dabced3f64d3537efde661a5"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/erp/tsconfig.json": {
+    "mtime": 1781855682.5841339,
+    "ast_hash": "f23ed4f3160a5ce49dc2f34c90cf3000",
+    "semantic_hash": "f23ed4f3160a5ce49dc2f34c90cf3000"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/infra/railway/erp.json": {
+    "mtime": 1781855682.585181,
+    "ast_hash": "8f30d07421fc18764eab171ba37e872c",
+    "semantic_hash": "8f30d07421fc18764eab171ba37e872c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/infra/railway/web.json": {
+    "mtime": 1781855682.5855494,
+    "ast_hash": "2c255bd0102009d755949b1f545b116d",
+    "semantic_hash": "2c255bd0102009d755949b1f545b116d"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/package.json": {
+    "mtime": 1781860740.1880255,
+    "ast_hash": "9f4fd6a52d0df1b921e1db53524effbe",
+    "semantic_hash": "9f4fd6a52d0df1b921e1db53524effbe"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/config/package.json": {
+    "mtime": 1781855682.586437,
+    "ast_hash": "d603467ac1feebfec1c18370e7c122d8",
+    "semantic_hash": "d603467ac1feebfec1c18370e7c122d8"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/config/tailwind/preset.ts": {
+    "mtime": 1782175585.3341053,
+    "ast_hash": "66ba6b953c428466a7656f4fc32cc356",
+    "semantic_hash": "66ba6b953c428466a7656f4fc32cc356"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/config/tsconfig/base.json": {
+    "mtime": 1781855682.5897923,
+    "ast_hash": "9b0402d4c6b2575bc27b57a837ba1750",
+    "semantic_hash": "9b0402d4c6b2575bc27b57a837ba1750"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/config/tsconfig/nextjs.json": {
+    "mtime": 1781855682.5890563,
+    "ast_hash": "62adcb5717bddf37a9e71a7c8de12ab4",
+    "semantic_hash": "62adcb5717bddf37a9e71a7c8de12ab4"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/config/tsconfig/react-library.json": {
+    "mtime": 1781855682.589356,
+    "ast_hash": "edd185a4710f067d3c30fa43b1c41216",
+    "semantic_hash": "edd185a4710f067d3c30fa43b1c41216"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/package.json": {
+    "mtime": 1781860457.3376768,
+    "ast_hash": "b193dced3754d7cf699df26be56db766",
+    "semantic_hash": "b193dced3754d7cf699df26be56db766"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/migrations/20260619091329_init/migration.sql": {
+    "mtime": 1781860409.9794092,
+    "ast_hash": "8696db0d4735e3d69085db039f04c402",
+    "semantic_hash": "8696db0d4735e3d69085db039f04c402"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/migrations/20260619153000_employees/migration.sql": {
+    "mtime": 1781863428.6557841,
+    "ast_hash": "39a3df3e3f536d80d5213a25d750eb73",
+    "semantic_hash": "39a3df3e3f536d80d5213a25d750eb73"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/migrations/20260620030121_messages/migration.sql": {
+    "mtime": 1781924481.5509944,
+    "ast_hash": "c40f3bf0e30ed65e25628e2cfe23e8b2",
+    "semantic_hash": "c40f3bf0e30ed65e25628e2cfe23e8b2"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/migrations/20260620060000_media/migration.sql": {
+    "mtime": 1781915509.3917878,
+    "ast_hash": "0dd6650a5647b7ecd147f43e86482f02",
+    "semantic_hash": "0dd6650a5647b7ecd147f43e86482f02"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/migrations/20260620110537_message_join/migration.sql": {
+    "mtime": 1781953537.10265,
+    "ast_hash": "6bec855d5390d5e62d0c96c5a8af8759",
+    "semantic_hash": "6bec855d5390d5e62d0c96c5a8af8759"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/prisma/seed.ts": {
+    "mtime": 1781910982.1340628,
+    "ast_hash": "cf77321efed0a68e4424b35df6777fe4",
+    "semantic_hash": "cf77321efed0a68e4424b35df6777fe4"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/scripts/create-admin.ts": {
+    "mtime": 1781862836.2186701,
+    "ast_hash": "59d12de94945b55045ac66c64d056780",
+    "semantic_hash": "59d12de94945b55045ac66c64d056780"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/src/index.ts": {
+    "mtime": 1781860760.9066837,
+    "ast_hash": "8e4f32473d0f68228eb4c48bcabc0b03",
+    "semantic_hash": "8e4f32473d0f68228eb4c48bcabc0b03"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/tsconfig.json": {
+    "mtime": 1781855682.5872405,
+    "ast_hash": "14a30e581b7e0c2198c6817c252b336d",
+    "semantic_hash": "14a30e581b7e0c2198c6817c252b336d"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/db/turbo.json": {
+    "mtime": 1781855682.5867372,
+    "ast_hash": "876c5a073dd51310913b2f06d9c87886",
+    "semantic_hash": "876c5a073dd51310913b2f06d9c87886"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/package.json": {
+    "mtime": 1781855682.5858476,
+    "ast_hash": "f3301d039aaae8276b91c19e98a32597",
+    "semantic_hash": "f3301d039aaae8276b91c19e98a32597"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/src/button.tsx": {
+    "mtime": 1781855682.5887518,
+    "ast_hash": "2c02786381c3c3e16adebdea6903b597",
+    "semantic_hash": "2c02786381c3c3e16adebdea6903b597"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/src/cn.ts": {
+    "mtime": 1781855682.588242,
+    "ast_hash": "8765135b85248df7e5690a442ba3d2d5",
+    "semantic_hash": "8765135b85248df7e5690a442ba3d2d5"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/src/container.tsx": {
+    "mtime": 1781855682.5879881,
+    "ast_hash": "24fa2d26af4abb91556b80377cb7d337",
+    "semantic_hash": "24fa2d26af4abb91556b80377cb7d337"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/src/index.ts": {
+    "mtime": 1781855682.5884976,
+    "ast_hash": "6e9fd11e7ce4e304c11d0b2f77c62499",
+    "semantic_hash": "6e9fd11e7ce4e304c11d0b2f77c62499"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/packages/ui/tsconfig.json": {
+    "mtime": 1781855682.5861478,
+    "ast_hash": "9b2d36c9b6864b32f1bb80af4c853583",
+    "semantic_hash": "9b2d36c9b6864b32f1bb80af4c853583"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/railway.json": {
+    "mtime": 1781859573.3848305,
+    "ast_hash": "3c02072648a8d53e7fe9b3b162b9fd9f",
+    "semantic_hash": "3c02072648a8d53e7fe9b3b162b9fd9f"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/turbo.json": {
+    "mtime": 1781855682.5787044,
+    "ast_hash": "a062f27da88b99d18326844857a1162b",
+    "semantic_hash": "a062f27da88b99d18326844857a1162b"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/.eslintrc.json": {
+    "mtime": 1781855682.5823488,
+    "ast_hash": "5cc89077d438e3d0d0a8308ab7e06a5a",
+    "semantic_hash": "5cc89077d438e3d0d0a8308ab7e06a5a"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/about/page.tsx": {
+    "mtime": 1782175585.3178813,
+    "ast_hash": "5c4f69a9dc7a61a3cba2081afe68e309",
+    "semantic_hash": "5c4f69a9dc7a61a3cba2081afe68e309"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/api/contact/route.ts": {
+    "mtime": 1781941325.0983224,
+    "ast_hash": "1734ff6e337fd768852a4110ec86d127",
+    "semantic_hash": "1734ff6e337fd768852a4110ec86d127"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/api/health/route.ts": {
+    "mtime": 1781855682.593174,
+    "ast_hash": "fea2316b64e0b22238800d0eff782727",
+    "semantic_hash": "fea2316b64e0b22238800d0eff782727"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/api/media/[...key]/route.ts": {
+    "mtime": 1781914568.1765115,
+    "ast_hash": "8f2a16081ce31b0cb09cb1dd0d10a687",
+    "semantic_hash": "8f2a16081ce31b0cb09cb1dd0d10a687"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/bibliya/[book]/[chapter]/page.tsx": {
+    "mtime": 1781954917.2629108,
+    "ast_hash": "f436d274b3420d630ebd06029d5de729",
+    "semantic_hash": "f436d274b3420d630ebd06029d5de729"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/bibliya/page.tsx": {
+    "mtime": 1781956434.1423316,
+    "ast_hash": "5eeceb828a161c7f6e0fd5ce04643f65",
+    "semantic_hash": "5eeceb828a161c7f6e0fd5ce04643f65"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/club/[category]/[slug]/page.tsx": {
+    "mtime": 1782175522.6050613,
+    "ast_hash": "b104da44a7491e675cf7d2cec8f91a98",
+    "semantic_hash": "b104da44a7491e675cf7d2cec8f91a98"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/club/[category]/page.tsx": {
+    "mtime": 1782175522.6048312,
+    "ast_hash": "bad1664439e36fb50167edaa5edc9fd5",
+    "semantic_hash": "bad1664439e36fb50167edaa5edc9fd5"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/contacts/page.tsx": {
+    "mtime": 1782175585.314201,
+    "ast_hash": "52b3cf9869044b3b292fbf132da89427",
+    "semantic_hash": "52b3cf9869044b3b292fbf132da89427"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/layout.tsx": {
+    "mtime": 1782175585.307146,
+    "ast_hash": "c7bd6278c4e38747e346f0adb8a256c3",
+    "semantic_hash": "c7bd6278c4e38747e346f0adb8a256c3"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/molitvy/[set]/page.tsx": {
+    "mtime": 1782002817.439915,
+    "ast_hash": "f8dbf6a86f41b5b3d4218be5b9df2c73",
+    "semantic_hash": "f8dbf6a86f41b5b3d4218be5b9df2c73"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/molitvy/page.tsx": {
+    "mtime": 1782002803.640203,
+    "ast_hash": "10a0de31b66c0d061ccaba72049a0ce2",
+    "semantic_hash": "10a0de31b66c0d061ccaba72049a0ce2"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/osnovy/[topic]/page.tsx": {
+    "mtime": 1782092493.0903478,
+    "ast_hash": "c7969acde412c178fb4d14b886611434",
+    "semantic_hash": "c7969acde412c178fb4d14b886611434"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/osnovy/page.tsx": {
+    "mtime": 1782092330.477398,
+    "ast_hash": "fc10ff64053a1e221bafae81fdfb0191",
+    "semantic_hash": "fc10ff64053a1e221bafae81fdfb0191"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/page.tsx": {
+    "mtime": 1782175585.3110096,
+    "ast_hash": "806ca55f879f7b850b160ed62f20b54d",
+    "semantic_hash": "806ca55f879f7b850b160ed62f20b54d"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/app/prazdniki/page.tsx": {
+    "mtime": 1781953640.2156327,
+    "ast_hash": "e64b96f86cd86fbd5fea7d74d4d32fdd",
+    "semantic_hash": "e64b96f86cd86fbd5fea7d74d4d32fdd"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/app-shell.tsx": {
+    "mtime": 1782175585.3213959,
+    "ast_hash": "af5b1de019c9a17cb052b5b8b0da1f74",
+    "semantic_hash": "af5b1de019c9a17cb052b5b8b0da1f74"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/contact-form.tsx": {
+    "mtime": 1781954029.321317,
+    "ast_hash": "1331324ba05529f052b229eb8105ddaa",
+    "semantic_hash": "1331324ba05529f052b229eb8105ddaa"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/empty-state.tsx": {
+    "mtime": 1781856352.8875635,
+    "ast_hash": "30087284360a1c921f2354a48fdf9a65",
+    "semantic_hash": "30087284360a1c921f2354a48fdf9a65"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/hover-arrow.tsx": {
+    "mtime": 1781916572.3347821,
+    "ast_hash": "561a9a3260b4d14ba3d2a6107616b735",
+    "semantic_hash": "561a9a3260b4d14ba3d2a6107616b735"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/page-header.tsx": {
+    "mtime": 1781858067.1137352,
+    "ast_hash": "9b299874fc048b0e122832d8bb9d6311",
+    "semantic_hash": "9b299874fc048b0e122832d8bb9d6311"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/components/smooth-scroll.tsx": {
+    "mtime": 1782109914.5742157,
+    "ast_hash": "a745f3e2c6fa2f09fbcf13fdef52019c",
+    "semantic_hash": "a745f3e2c6fa2f09fbcf13fdef52019c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/articles.ts": {
+    "mtime": 1781916694.00339,
+    "ast_hash": "71d3652d6a04ed01a1696c783a443740",
+    "semantic_hash": "71d3652d6a04ed01a1696c783a443740"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/bible.ts": {
+    "mtime": 1781956412.0777185,
+    "ast_hash": "21854938a9542d1335bb1a07c824fe80",
+    "semantic_hash": "21854938a9542d1335bb1a07c824fe80"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/daily-verse.ts": {
+    "mtime": 1781910295.5958989,
+    "ast_hash": "8f02867f13015dfce1d9c32d4cfbc125",
+    "semantic_hash": "8f02867f13015dfce1d9c32d4cfbc125"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/faith.ts": {
+    "mtime": 1782092310.1352208,
+    "ast_hash": "8d5110f406ba449bf204375acc0726de",
+    "semantic_hash": "8d5110f406ba449bf204375acc0726de"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/messages.ts": {
+    "mtime": 1781953550.1818333,
+    "ast_hash": "dc3dd5626c313c4dfc26b476d057be53",
+    "semantic_hash": "dc3dd5626c313c4dfc26b476d057be53"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/navigation.ts": {
+    "mtime": 1782175585.3243344,
+    "ast_hash": "cf9f1132d8bb0438a279610b911961d7",
+    "semantic_hash": "cf9f1132d8bb0438a279610b911961d7"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/prayers.ts": {
+    "mtime": 1782536313.707477,
+    "ast_hash": "67c1fcc3d488522e9d70838896af843d",
+    "semantic_hash": "67c1fcc3d488522e9d70838896af843d"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/rubrics.ts": {
+    "mtime": 1782175585.3276029,
+    "ast_hash": "5384d768b1d0af03f9c3a7aa311dcb40",
+    "semantic_hash": "5384d768b1d0af03f9c3a7aa311dcb40"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/saints.ts": {
+    "mtime": 1781857444.1230292,
+    "ast_hash": "9d76c0ed054952d66fc2525bd7037b79",
+    "semantic_hash": "9d76c0ed054952d66fc2525bd7037b79"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/sanitize.ts": {
+    "mtime": 1781917964.2150266,
+    "ast_hash": "09eb3a04a1b3c20b7ad74e35247b6035",
+    "semantic_hash": "09eb3a04a1b3c20b7ad74e35247b6035"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/lib/storage.ts": {
+    "mtime": 1781914560.9164815,
+    "ast_hash": "abb065428dddd579f03fd5b5fdc708be",
+    "semantic_hash": "abb065428dddd579f03fd5b5fdc708be"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/next.config.mjs": {
+    "mtime": 1782175553.3013318,
+    "ast_hash": "a4516b91573c1efde9c01d417a4f4905",
+    "semantic_hash": "a4516b91573c1efde9c01d417a4f4905"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/package.json": {
+    "mtime": 1782109840.9663439,
+    "ast_hash": "ce1702cf8f541ee149aeb2c5f71ed8d0",
+    "semantic_hash": "ce1702cf8f541ee149aeb2c5f71ed8d0"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/postcss.config.mjs": {
+    "mtime": 1781855682.5807388,
+    "ast_hash": "e5f291ae7dc8b9e462f4bc232849464c",
+    "semantic_hash": "e5f291ae7dc8b9e462f4bc232849464c"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/tailwind.config.ts": {
+    "mtime": 1781855682.5814962,
+    "ast_hash": "dea43ff0dabced3f64d3537efde661a5",
+    "semantic_hash": "dea43ff0dabced3f64d3537efde661a5"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/tsconfig.json": {
+    "mtime": 1781855682.5820637,
+    "ast_hash": "f23ed4f3160a5ce49dc2f34c90cf3000",
+    "semantic_hash": "f23ed4f3160a5ce49dc2f34c90cf3000"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/.github/workflows/ci.yml": {
+    "mtime": 1781855682.587533,
+    "ast_hash": "4154ad19a63546c3dac94932831ff5f2",
+    "semantic_hash": "4154ad19a63546c3dac94932831ff5f2"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/pnpm-workspace.yaml": {
+    "mtime": 1781855682.5800703,
+    "ast_hash": "74148437477927193f0478f87b3b7e5b",
+    "semantic_hash": "74148437477927193f0478f87b3b7e5b"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/content/alco.webp": {
+    "mtime": 1781914448.5984704,
+    "ast_hash": "c1fb317e73aeb940766cd27119341e44",
+    "semantic_hash": "c1fb317e73aeb940766cd27119341e44"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/content/nicotine.jpg": {
+    "mtime": 1782012552.2074373,
+    "ast_hash": "5e50dbc361d3a8ee8c555d1bd073441f",
+    "semantic_hash": "5e50dbc361d3a8ee8c555d1bd073441f"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/public/banner.jpeg": {
+    "mtime": 1781914082.4669244,
+    "ast_hash": "306f3f8e340a4720538de1c3faed8f02",
+    "semantic_hash": "306f3f8e340a4720538de1c3faed8f02"
+  },
+  "/Users/macbookair/Documents/Projects/Istina/web/public/street.jpg": {
+    "mtime": 1781914982.9923658,
+    "ast_hash": "f201b59b7250b1c413f4722620a1cb44",
+    "semantic_hash": "f201b59b7250b1c413f4722620a1cb44"
+  }
+}

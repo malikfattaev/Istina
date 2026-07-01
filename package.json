@@ -1,8 +1,8 @@
 {
-  "name": "istina",
+  "name": "vnls",
   "version": "0.1.0",
   "private": true,
-  "description": "Истина - современный православный форум Узбекистана (istina.uz)",
+  "description": "ПМК во имя святых мучениц Веры, Надежды, Любови и матери их Софии - православный молодёжный клуб Узбекистана (vnls.uz)",
   "packageManager": "pnpm@11.1.1",
   "engines": {
     "node": ">=20"
@@ -24,11 +24,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
     "db:generate": "turbo run db:generate",
-    "db:migrate": "pnpm --filter @istina/db run db:migrate",
-    "db:migrate:dev": "pnpm --filter @istina/db run db:migrate:dev",
-    "db:push": "pnpm --filter @istina/db run db:push",
-    "db:seed": "pnpm --filter @istina/db run db:seed",
-    "db:studio": "pnpm --filter @istina/db run db:studio",
+    "db:migrate": "pnpm --filter @vnls/db run db:migrate",
+    "db:migrate:dev": "pnpm --filter @vnls/db run db:migrate:dev",
+    "db:push": "pnpm --filter @vnls/db run db:push",
+    "db:seed": "pnpm --filter @vnls/db run db:seed",
+    "db:studio": "pnpm --filter @vnls/db run db:studio",
     "clean": "turbo run clean"
   },
   "devDependencies": {

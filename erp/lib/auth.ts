@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { SignJWT, jwtVerify } from "jose";
-import { prisma, verifyPassword, type Role } from "@istina/db";
+import { prisma, verifyPassword, type Role } from "@vnls/db";
 
 const COOKIE = "istina_session";
 const MAX_AGE = 60 * 60 * 24 * 7; // 7 дней

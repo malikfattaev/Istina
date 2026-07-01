@@ -6,7 +6,8 @@ import { HoverArrow } from "@/components/hover-arrow";
 
 export const metadata: Metadata = {
   title: "Контакты",
-  description: "Как связаться с молодёжным клубом «Истина».",
+  description:
+    "Как связаться с православным молодёжным клубом во имя святых мучениц Веры, Надежды, Любови и матери их Софии.",
 };
 
 type Contact = {
@@ -20,8 +21,8 @@ const contacts: Contact[] = [
   {
     icon: Mail,
     label: "Электронная почта",
-    value: "help@istina.uz",
-    href: "mailto:help@istina.uz",
+    value: "help@vnls.uz",
+    href: "mailto:help@vnls.uz",
   },
   {
     icon: Phone,

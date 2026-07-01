@@ -1,4 +1,4 @@
-import { MessageCategory, prisma } from "@istina/db";
+import { MessageCategory, prisma } from "@vnls/db";
 
 export type MessageInput = {
   category: string;
@@ -37,7 +37,7 @@ export async function createMessage(
   } catch (e) {
     console.error("[createMessage] failed:", e);
     return {
-      error: "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz.",
+      error: "Не удалось отправить. Попробуйте позже или напишите на help@vnls.uz.",
     };
   }
 

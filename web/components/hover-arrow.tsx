@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 
 /**
  * Стрелка, которая выезжает и проявляется при наведении на родителя с классом

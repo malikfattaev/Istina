@@ -1,4 +1,4 @@
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 
 export function PageHeader({
   title,

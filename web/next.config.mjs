@@ -10,7 +10,7 @@ const nextConfig = {
   // В монорепо трассировка зависимостей должна начинаться от корня.
   outputFileTracingRoot: monorepoRoot,
   // Локальные пакеты компилируются вместе с приложением.
-  transpilePackages: ["@istina/ui", "@istina/db"],
+  transpilePackages: ["@vnls/ui", "@vnls/db"],
   reactStrictMode: true,
   poweredByHeader: false,
   // Старые пути ведём на новые: «Евангелие» -> «Библия», «форум» -> «клуб»

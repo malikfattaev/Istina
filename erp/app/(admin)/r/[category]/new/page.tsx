@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 import { ArticleForm } from "@/components/article-form";
 import { listMedia } from "@/lib/media";
 

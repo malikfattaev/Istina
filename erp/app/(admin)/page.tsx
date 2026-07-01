@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Images, Mail, Users, type LucideIcon } from "lucide-react";
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 import { rubricIcon } from "@/lib/rubric-icons";
 
 function QuickLink({
@@ -59,7 +59,8 @@ export default async function DashboardPage() {
     <div>
       <h1 className="font-serif text-2xl font-semibold text-sand-900">Обзор</h1>
       <p className="mt-1 text-sand-600">
-        Панель управления клубом «Истина».
+        Панель управления православным молодёжным клубом во имя святых мучениц
+        Веры, Надежды, Любови и матери их Софии.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -26,12 +26,6 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.1072.0
         version: 3.1072.0
-      '@istina/db':
-        specifier: workspace:*
-        version: link:../packages/db
-      '@istina/ui':
-        specifier: workspace:*
-        version: link:../packages/ui
       '@tiptap/extension-color':
         specifier: ^3.27.1
         version: 3.27.1(@tiptap/extension-text-style@3.27.1(@tiptap/core@3.27.1(@tiptap/pm@3.27.1)))
@@ -53,6 +47,12 @@ importers:
       '@tiptap/starter-kit':
         specifier: ^3.27.1
         version: 3.27.1
+      '@vnls/db':
+        specifier: workspace:*
+        version: link:../packages/db
+      '@vnls/ui':
+        specifier: workspace:*
+        version: link:../packages/ui
       image-size:
         specifier: ^2.0.2
         version: 2.0.2
@@ -75,9 +75,6 @@ importers:
         specifier: ^3.24.1
         version: 3.25.76
     devDependencies:
-      '@istina/config':
-        specifier: workspace:*
-        version: link:../packages/config
       '@types/node':
         specifier: ^22.10.2
         version: 22.19.21
@@ -87,6 +84,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.2
         version: 19.2.3(@types/react@19.2.17)
+      '@vnls/config':
+        specifier: workspace:*
+        version: link:../packages/config
       autoprefixer:
         specifier: ^10.4.20
         version: 10.5.0(postcss@8.5.15)
@@ -121,15 +121,15 @@ importers:
         specifier: ^2.4.3
         version: 2.4.3
     devDependencies:
-      '@istina/config':
-        specifier: workspace:*
-        version: link:../config
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
       '@types/node':
         specifier: ^22.10.2
         version: 22.19.21
+      '@vnls/config':
+        specifier: workspace:*
+        version: link:../config
       prisma:
         specifier: ^6.1.0
         version: 6.19.3(typescript@5.9.3)
@@ -152,15 +152,15 @@ importers:
         specifier: ^2.5.4
         version: 2.6.1
     devDependencies:
-      '@istina/config':
-        specifier: workspace:*
-        version: link:../config
       '@types/react':
         specifier: ^19.0.1
         version: 19.2.17
       '@types/react-dom':
         specifier: ^19.0.2
         version: 19.2.3(@types/react@19.2.17)
+      '@vnls/config':
+        specifier: workspace:*
+        version: link:../config
       react:
         specifier: ^19.0.0
         version: 19.2.7
@@ -176,10 +176,10 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.1072.0
         version: 3.1072.0
-      '@istina/db':
+      '@vnls/db':
         specifier: workspace:*
         version: link:../packages/db
-      '@istina/ui':
+      '@vnls/ui':
         specifier: workspace:*
         version: link:../packages/ui
       lenis:
@@ -201,9 +201,6 @@ importers:
         specifier: ^2.17.5
         version: 2.17.5
     devDependencies:
-      '@istina/config':
-        specifier: workspace:*
-        version: link:../packages/config
       '@types/node':
         specifier: ^22.10.2
         version: 22.19.21
@@ -216,6 +213,9 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.16.1
         version: 2.16.1
+      '@vnls/config':
+        specifier: workspace:*
+        version: link:../packages/config
       autoprefixer:
         specifier: ^10.4.20
         version: 10.5.0(postcss@8.5.15)
@@ -4493,7 +4493,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.10
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.2.0(eslint@8.57.1)
@@ -4523,7 +4523,7 @@ snapshots:
       tinyglobby: 0.2.17
       unrs-resolver: 1.12.2
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4538,7 +4538,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.61.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9

@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 import { requireAdmin } from "@/lib/auth";
 
 /** Отмечает письмо прочитанным/непрочитанным. */

@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, X } from "lucide-react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 import { createEmployee, type EmployeeFormState } from "@/lib/employee-actions";
 
 const field =

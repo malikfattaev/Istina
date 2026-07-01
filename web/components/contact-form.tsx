@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 
 type Category = "join" | "help" | "donate" | "other";
 
@@ -71,7 +71,7 @@ export function ContactForm() {
       if (!response.ok || !result?.ok) {
         setError(
           result?.error ??
-            "Не удалось отправить. Попробуйте позже или напишите на help@istina.uz.",
+            "Не удалось отправить. Попробуйте позже или напишите на help@vnls.uz.",
         );
         return;
       }
@@ -147,7 +147,7 @@ export function ContactForm() {
             required
             value={contact}
             onChange={(event) => setContact(event.target.value)}
-            placeholder="help@istina.uz или +998 ..."
+            placeholder="help@vnls.uz или +998 ..."
             className={`${fieldClassName} mt-1.5`}
           />
         </div>

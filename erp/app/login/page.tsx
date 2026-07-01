@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 import { signInAction, type LoginState } from "./actions";
 
 const field =
@@ -20,7 +20,9 @@ export default function LoginPage() {
         className="w-full max-w-sm rounded-2xl border border-sand-200 bg-white p-6 sm:p-8"
       >
         <div className="mb-6">
-          <p className="text-lg font-semibold text-sand-900">Истина ERP</p>
+          <p className="text-base font-semibold leading-snug text-sand-900">
+            ПМК во имя святых мучениц Веры, Надежды, Любови и матери их Софии
+          </p>
           <p className="text-xs text-sand-500">Панель управления</p>
         </div>
 

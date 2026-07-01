@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { ArticleStatus, prisma } from "@istina/db";
+import { ArticleStatus, prisma } from "@vnls/db";
 import { requireAdmin } from "@/lib/auth";
 
 const articleSchema = z.object({

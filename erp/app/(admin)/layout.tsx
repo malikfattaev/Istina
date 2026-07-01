@@ -1,4 +1,4 @@
-import { prisma } from "@istina/db";
+import { prisma } from "@vnls/db";
 import { requireAdmin } from "@/lib/auth";
 import { AdminShell } from "@/components/admin-shell";
 

@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
  * Создаёт или обновляет администратора (вход по логину).
  * Запуск:
  *   ADMIN_USERNAME=admin ADMIN_PASSWORD=secret \
- *     pnpm --filter @istina/db run create-admin
+ *     pnpm --filter @vnls/db run create-admin
  */
 async function main() {
   const username = process.env.ADMIN_USERNAME ?? process.argv[2];

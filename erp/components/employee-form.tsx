@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { Button } from "@istina/ui";
+import { Button } from "@vnls/ui";
 import {
   createEmployee,
   updateEmployee,

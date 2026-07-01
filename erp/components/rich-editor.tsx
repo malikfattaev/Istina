@@ -15,7 +15,7 @@ import {
   Underline,
   Unlink,
 } from "lucide-react";
-import { cn } from "@istina/ui";
+import { cn } from "@vnls/ui";
 
 function Btn({
   onClick,
